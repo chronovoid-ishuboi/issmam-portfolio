@@ -1,0 +1,36 @@
+{
+  "name": "Md Woasif Mehmud Issmam",
+  "short": "Woasif Issmam",
+  "handle": "ishuboi",
+  "motto": "You either build from it or you die out of it.",
+  "role": "CSE Undergraduate · Islamic University of Technology",
+  "tagline": "Platform engineering · Android with Flutter · Photography",
+  "location": "Dhaka, Bangladesh",
+  "emails": [
+    { "label": "Personal", "address": "issmamwm28@gmail.com" },
+    { "label": "Academic", "address": "woasifmehmud@iut-dhaka.edu" }
+  ],
+  "phone": "+8801540360651",
+  "resume": "assets/resume/Woasif-Issmam-CV.pdf",
+  "about": [
+    "I'm a fourth-semester Computer Science &amp; Engineering undergraduate at the Islamic University of Technology, Dhaka — the OIC's university, sitting on the edge of the capital.",
+    "I build things that have to hold up when it matters. A donor-matching engine for emergency blood requests. A chat protocol that pushes instead of polls. A cache controller drawn as a state machine and made to run.",
+    "I'm heading toward <em>platform engineering</em> — the layer underneath, the part nobody notices until it stops. Alongside that I'm building Android with Flutter, and working through the fundamentals of machine learning from the maths up rather than the library down.",
+    "Before any of that I was a photographer, a magazine editor, and a kid who read too much. None of that went away."
+  ],
+  "now": [
+    "Building JavaFX desktop systems for Visual Programming Lab",
+    "Learning Flutter for Android",
+    "Working through regression and instance-based learning in ML",
+    "Running PR &amp; Marketing for IUT Computer Society"
+  ],
+  "social": [
+    { "id": "github",        "label": "GitHub",         "handle": "chronovoid-ishuboi", "url": "https://github.com/chronovoid-ishuboi" },
+    { "id": "linkedin",      "label": "LinkedIn",       "handle": "woasif-issmam",      "url": "https://www.linkedin.com/in/woasif-issmam-9613a7243/" },
+    { "id": "stackoverflow", "label": "Stack Overflow", "handle": "woasif-issmam",      "url": "https://stackoverflow.com/users/29977935/woasif-issmam" },
+    { "id": "x",             "label": "X",              "handle": "@issmamwm28",        "url": "https://x.com/issmamwm28" },
+    { "id": "facebook",      "label": "Facebook",       "handle": "issmamwm28",         "url": "https://www.facebook.com/issmamwm28/" },
+    { "id": "twitch",        "label": "Twitch",         "handle": "ishuboi28",          "url": "https://www.twitch.tv/ishuboi28" },
+    { "id": "discord",       "label": "Discord",        "handle": "ishuboi#6742",       "url": "" }
+  ]
+}

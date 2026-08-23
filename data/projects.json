@@ -1,0 +1,129 @@
+{
+  "featured": [
+    {
+      "id": "bloodlink",
+      "title": "BloodLink",
+      "kicker": "Emergency Blood Response Platform",
+      "course": "CSE 4402 · Visual Programming Lab",
+      "year": "2026",
+      "status": "Ongoing",
+      "repo": "https://github.com/chronovoid-ishuboi/BloodLink",
+      "lead": "Finding an eligible donor during a medical emergency is a search problem with a clock attached. BloodLink turns it into a ranked, auditable pipeline.",
+      "body": "A full JavaFX desktop system that takes an emergency blood request and walks it end to end — eligibility assessment, ranked donor matching, request lifecycle, in-app notification, and an audit trail that survives the incident.",
+      "highlights": [
+        "Role-based authentication across donor, requester and administrator",
+        "Eligibility engine — donation intervals, availability state and blood-group compatibility",
+        "Ranked donor matching with candidate scoring, not a flat list",
+        "Full request lifecycle with status history and audit entries",
+        "Achievement badge tiers to keep donors returning",
+        "Administrator dashboard with demand analytics",
+        "89 source files, unit-tested, nine architecture documents"
+      ],
+      "stack": ["openjdk", "javafx", "apachemaven", "mysql"],
+      "stackLabels": ["Java 21", "JavaFX 21", "Maven", "MySQL 8"]
+    },
+    {
+      "id": "ishuchats",
+      "title": "Ishuchats",
+      "kicker": "Real-Time Messaging over Raw TCP",
+      "course": "CSE 4402 · Socket Programming",
+      "year": "2026",
+      "status": "Complete",
+      "repo": "https://github.com/chronovoid-ishuboi/Ishuchats",
+      "lead": "The easy version of a chat app polls a database. This one doesn't. Messages are pushed the moment they exist.",
+      "body": "A multi-user private messaging application where the network layer and the storage layer have separate jobs and never confuse them. Sockets carry delivery; MySQL only remembers.",
+      "highlights": [
+        "Hand-written packet protocol over Java TCP sockets, documented in PROTOCOL.md",
+        "Push delivery — the client never polls the database for new messages",
+        "Handshake, private routing and live online/offline presence",
+        "BCrypt password hashing, non-modular build to avoid FXML reflection traps",
+        "Text and image messages with persistent history",
+        "Bundled dark and light themes"
+      ],
+      "stack": ["openjdk", "javafx", "mysql", "apachemaven"],
+      "stackLabels": ["Java 21", "JavaFX 21", "TCP Sockets", "MySQL", "Gson", "jBCrypt"]
+    },
+    {
+      "id": "fsm",
+      "title": "FSM Cache Controller",
+      "kicker": "Computer Architecture Simulation",
+      "course": "CSE 4305 · Computer Organisation &amp; Architecture",
+      "year": "2026",
+      "status": "Complete",
+      "repo": "https://github.com/chronovoid-ishuboi/CSE_4305_FSM_Project",
+      "lead": "A cache controller is a state machine before it is ever silicon. This one is written as exactly that — and then made to run.",
+      "body": "A direct-mapped, write-back cache modelled as an explicit finite state machine and driven by a CPU request trace. Written in pure Python with no dependencies so the logic has nowhere to hide.",
+      "highlights": [
+        "Four explicit states — IDLE, COMPARETAG, ALLOCATE, WRITEBACK",
+        "Direct-mapped cache, four lines, write-back with dirty-bit eviction",
+        "256-entry main memory with a four-cycle access penalty",
+        "Reads a CPU trace of read and write requests from file",
+        "Zero external dependencies — standard library only",
+        "Built with a team of three"
+      ],
+      "stack": ["python"],
+      "stackLabels": ["Python 3"]
+    },
+    {
+      "id": "quake",
+      "title": "Earthquake Management System",
+      "kicker": "Object-Oriented Disaster Response",
+      "course": "CSE 4302 · Object Oriented Programming",
+      "year": "2025",
+      "status": "Complete",
+      "repo": "https://github.com/chronovoid-ishuboi/230041213_CSE4302",
+      "lead": "A country that sits on a fault line should be able to model what happens after the shaking stops.",
+      "body": "A C++ object-oriented system for coordinating earthquake response — modelling incidents, resources and the relationships between them through inheritance and polymorphism rather than a pile of structs.",
+      "highlights": [
+        "Class hierarchy modelling incidents, zones and response resources",
+        "Inheritance and polymorphism used as the organising principle",
+        "Encapsulated state with controlled interfaces",
+        "Collaborative build"
+      ],
+      "stack": ["cplusplus"],
+      "stackLabels": ["C++", "OOP"]
+    }
+  ],
+  "more": [
+    {
+      "id": "snake",
+      "title": "Terminal Snake",
+      "blurb": "Classic Snake running inside the Windows terminal with zero graphical dependencies — raw escape sequences, an adaptive board that resizes to the window, and a snake that speeds up as it grows.",
+      "stack": ["c"],
+      "stackLabels": ["C"],
+      "repo": "https://github.com/chronovoid-ishuboi/snake-game-on-terminal-for-windows"
+    },
+    {
+      "id": "moments",
+      "title": "Moments",
+      "blurb": "A JavaFX stories-feed interface — user rings, timed story items and a full FXML/CSS presentation layer separated cleanly from the model.",
+      "stack": ["openjdk", "javafx"],
+      "stackLabels": ["Java", "JavaFX", "FXML"],
+      "repo": "https://github.com/chronovoid-ishuboi/storiesapp"
+    },
+    {
+      "id": "loginmaker",
+      "title": "Login Maker",
+      "blurb": "A login interface built from scratch in plain HTML, CSS and JavaScript — an early exercise in getting a single screen to feel finished.",
+      "stack": ["html5", "css", "javascript"],
+      "stackLabels": ["HTML", "CSS", "JavaScript"],
+      "repo": "https://github.com/chronovoid-ishuboi/Login-maker"
+    },
+    {
+      "id": "clock",
+      "title": "Terminal Clock",
+      "blurb": "A live-updating terminal clock in C++ with switchable 12-hour and 24-hour formats, redrawing in place every second.",
+      "stack": ["cplusplus"],
+      "stackLabels": ["C++"],
+      "repo": "https://github.com/chronovoid-ishuboi/Clock"
+    },
+    {
+      "id": "tictactoe",
+      "title": "Tic-Tac-Toe, One Dimension",
+      "blurb": "Two-player Tic-Tac-Toe where the board is a single flat array — the constraint being the entire point of the exercise.",
+      "stack": ["c"],
+      "stackLabels": ["C"],
+      "repo": "https://github.com/chronovoid-ishuboi/Tic-tac-toe-pvp-1D-array"
+    }
+  ]
+}

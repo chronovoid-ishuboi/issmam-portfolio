@@ -1,0 +1,59 @@
+{
+  "groups": [
+    {
+      "name": "Languages",
+      "note": "What I actually write in.",
+      "items": [
+        { "icon": "openjdk",    "label": "Java",       "level": "primary" },
+        { "icon": "python",     "label": "Python",     "level": "primary" },
+        { "icon": "cplusplus",  "label": "C++",        "level": "primary" },
+        { "icon": "c",          "label": "C",          "level": "primary" },
+        { "icon": "javascript", "label": "JavaScript", "level": "working" },
+        { "icon": "html5",      "label": "HTML",       "level": "working" },
+        { "icon": "css",        "label": "CSS",        "level": "working" },
+        { "icon": "dart",       "label": "Dart",       "level": "learning" }
+      ]
+    },
+    {
+      "name": "Frameworks &amp; Platforms",
+      "note": "Where the code ends up.",
+      "items": [
+        { "icon": "javafx",  "label": "JavaFX",  "level": "primary" },
+        { "icon": "flutter", "label": "Flutter", "level": "learning" },
+        { "icon": "android", "label": "Android", "level": "learning" },
+        { "icon": "mysql",   "label": "MySQL",   "level": "working" },
+        { "icon": "linux",   "label": "Linux",   "level": "working" }
+      ]
+    },
+    {
+      "name": "Machine Learning",
+      "note": "Regression, classification and instance-based methods — from the maths up.",
+      "items": [
+        { "icon": "numpy",  "label": "NumPy",  "level": "learning" },
+        { "icon": "pandas", "label": "pandas", "level": "learning" }
+      ]
+    },
+    {
+      "name": "Tooling",
+      "note": "The rest of the desk.",
+      "items": [
+        { "icon": "git",         "label": "Git",         "level": "primary" },
+        { "icon": "github",      "label": "GitHub",      "level": "primary" },
+        { "icon": "apachemaven", "label": "Maven",       "level": "working" },
+        { "icon": "antigravity", "label": "Antigravity", "level": "working" },
+        { "icon": "notion",      "label": "Notion",      "level": "working" },
+        { "icon": "figma",       "label": "Figma",       "level": "learning" },
+        { "icon": "markdown",    "label": "Markdown",    "level": "primary" }
+      ]
+    }
+  ],
+  "legend": [
+    { "level": "primary",  "label": "Build with it" },
+    { "level": "working",  "label": "Comfortable" },
+    { "level": "learning", "label": "Learning now" }
+  ],
+  "ml": {
+    "title": "Currently through",
+    "items": ["Linear regression", "Logistic regression", "k-Nearest Neighbours"]
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "timeline": [
+    {
+      "id": "iut",
+      "period": "2024 — present",
+      "title": "BSc in Computer Science &amp; Engineering",
+      "institution": "Islamic University of Technology (IUT), OIC",
+      "note": "Currently in the fourth semester.",
+      "result": "In progress",
+      "board": "",
+      "current": true
+    },
+    {
+      "id": "hsc",
+      "period": "2022 — 2023",
+      "title": "Higher Secondary Certificate (HSC)",
+      "institution": "Notre Dame College, Dhaka",
+      "note": "",
+      "result": "GPA 5.00",
+      "board": "Dhaka Board",
+      "award": "General Scholarship, Dhaka Board",
+      "current": false
+    },
+    {
+      "id": "ssc",
+      "period": "2013 — 2021",
+      "title": "Secondary School Certificate (SSC)",
+      "institution": "St. Joseph Higher Secondary School",
+      "note": "",
+      "result": "GPA 5.00",
+      "board": "Dhaka Board",
+      "current": false
+    },
+    {
+      "id": "jsc",
+      "period": "2018",
+      "title": "Junior School Certificate (JSC)",
+      "institution": "St. Joseph Higher Secondary School",
+      "note": "",
+      "result": "GPA 5.00",
+      "board": "Dhaka Board",
+      "current": false
+    },
+    {
+      "id": "pec",
+      "period": "2015",
+      "title": "Primary Education Completion (PEC)",
+      "institution": "St. Joseph Higher Secondary School",
+      "note": "",
+      "result": "GPA 5.00",
+      "board": "Dhaka Board",
+      "current": false
+    }
+  ],
+  "streak": {
+    "label": "Four public examinations. Four perfect scores.",
+    "detail": "PEC · JSC · SSC · HSC — GPA 5.00 in every one, all under Dhaka Board."
+  },
+  "achievements": [
+    {
+      "title": "General Scholarship",
+      "org": "Dhaka Education Board",
+      "detail": "Awarded on HSC results.",
+      "tier": "gold"
+    },
+    {
+      "title": "Distinction in Science — top 0.5% in South Asia",
+      "org": "ICAS, UNSW Australia",
+      "detail": "Credit awards in Mathematics and Digital Technologies in the same assessment.",
+      "tier": "gold"
+    },
+    {
+      "title": "Year-long British Council membership",
+      "org": "British Council &amp; BanglaVision",
+      "detail": "Awarded through their national book reading competition.",
+      "tier": "silver"
+    },
+    {
+      "title": "Champion 2014 · Runner-up 2017 — Science Fair",
+      "org": "Scintilla Science Club",
+      "detail": "Also placed 4th in the 2014 Scrapbook competition.",
+      "tier": "silver"
+    },
+    {
+      "title": "Runner-up &amp; exhibited — Photography",
+      "org": "Artist Club &amp; RUMC's RCPC",
+      "detail": "Work selected for display.",
+      "tier": "silver"
+    },
+    {
+      "title": "Olympiad participation",
+      "org": "BdChO · Notre Dame Eco &amp; Space Club",
+      "detail": "Bangladesh Chemistry Olympiad; Biology and Astronomy Olympiads.",
+      "tier": "bronze"
+    }
+  ],
+  "leadership": [
+    {
+      "role": "PR &amp; Marketing Executive",
+      "org": "IUT Computer Society (IUTCS)",
+      "period": "Present",
+      "detail": "Public relations and marketing for the society, including the IUPC — IUT's inter-university programming contest.",
+      "current": true
+    },
+    {
+      "role": "Chief Student Editor",
+      "org": "The Josephite 2019 — official yearbook",
+      "period": "2019",
+      "detail": "Led the student editorial team for the school's official yearbook, St. Joseph Higher Secondary School.",
+      "current": false
+    },
+    {
+      "role": "Organising Secretary &amp; Photographer",
+      "org": "Josephite Cultural Forum",
+      "period": "2019",
+      "detail": "Ran events and shot them.",
+      "current": false
+    },
+    {
+      "role": "Photography &amp; Media Team",
+      "org": "Josephite Language &amp; Reading Club",
+      "period": "2019",
+      "detail": "Student editor for the 16th JLRC magazine and the Josephite Cultural Forum magazine.",
+      "current": false
+    },
+    {
+      "role": "Executive",
+      "org": "Josephite Wall Magazine Club &amp; Josephite Chess Club",
+      "period": "2019 — 2021",
+      "detail": "",
+      "current": false
+    },
+    {
+      "role": "Coordinator",
+      "org": "Artist Club QuizMania 2021",
+      "period": "2021",
+      "detail": "",
+      "current": false
+    }
+  ],
+  "cocurricular": [
+    "Photography workshops — DU Television, Film &amp; Photography Department; Josephite Wall Magazine Club",
+    "Book reading competition — British Council &amp; BanglaVision",
+    "ক্ষুদে পাঠকচক্র ও বই পড়া প্রতিযোগিতা — বিশ্ব সাহিত্য কেন্দ্র",
+    "ICAS assessments in Science, Mathematics, Digital Technologies and English — UNSW Australia",
+    "Science Fair &amp; Scrapbook competitions — Scintilla Science Club",
+    "Bangladesh Chemistry Olympiad (BdChO)",
+    "Turn The Coat, Book-Based Quiz, Spelling Bee, Catch 22 — Josephite Language &amp; Reading Club",
+    "Biology &amp; Astronomy Olympiads — Notre Dame Eco &amp; Space Club"
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "cards": [
+    {
+      "id": "f1",
+      "eyebrow": "01",
+      "title": "Grid &amp; Downforce",
+      "line": "Formula 1, from underneath the bodywork.",
+      "body": "Internal combustion before it was regulated into politeness. Aerodynamics as an argument between drag and grip. And tyres — the only four patches of rubber that decide whether any of the rest of it mattered.",
+      "tag": "Motorsport engineering"
+    },
+    {
+      "id": "pitch",
+      "eyebrow": "02",
+      "title": "Ninety Minutes, Five Days",
+      "line": "Football and cricket, at opposite ends of patience.",
+      "body": "One sport compresses everything into a single afternoon. The other stretches it across five days and calls a draw an outcome. I follow both, and I'll defend both formats to anyone who asks.",
+      "tag": "Football · Cricket"
+    },
+    {
+      "id": "sound",
+      "eyebrow": "03",
+      "title": "Everything in the Signal",
+      "line": "Hip-hop, R&amp;B, conscious rap, classical.",
+      "body": "A verse that argues with itself and a string section that never says a word — I don't think those are different interests. Both are structure carrying weight. The playlist has no genre discipline whatsoever.",
+      "tag": "Music"
+    },
+    {
+      "id": "games",
+      "eyebrow": "04",
+      "title": "Two Kinds of Play",
+      "line": "Open-world story, and tactical shooters.",
+      "body": "Slow games I play for the world — the ones where riding somewhere quietly is the point. Fast games I play for the read: tactical first-person shooters and battle royale, where the whole match turns on one correct guess.",
+      "tag": "Gaming"
+    },
+    {
+      "id": "atlas",
+      "eyebrow": "05",
+      "title": "Borders Are Recent",
+      "line": "Empires, cultures, and how they drifted.",
+      "body": "A geography habit that turned into a history habit. How trade routes became languages, how empires left their grammar behind, how a line drawn in one century is still deciding things in another.",
+      "tag": "Geography · History"
+    },
+    {
+      "id": "fauna",
+      "eyebrow": "06",
+      "title": "The Older Engineering",
+      "line": "Animals, biology, and systems nobody designed.",
+      "body": "Every organism is an optimisation problem that has been running for millions of years without a specification. I find that more interesting than most architecture diagrams.",
+      "tag": "Biology"
+    },
+    {
+      "id": "uiux",
+      "eyebrow": "07",
+      "title": "The Part People Touch",
+      "line": "UI, UX, and interfaces that don't argue back.",
+      "body": "I care about the layer underneath — but the layer on top is where a system either earns trust or loses it. Good interfaces are invisible in the same way good infrastructure is.",
+      "tag": "Design"
+    },
+    {
+      "id": "lens",
+      "eyebrow": "08",
+      "title": "Issmam's Photography",
+      "line": "Standing still long enough to notice.",
+      "body": "Started with school magazines and workshops, kept going. An archive that goes back further than the gear deserved.",
+      "tag": "Photography",
+      "link": "lens"
+    }
+  ]
+}

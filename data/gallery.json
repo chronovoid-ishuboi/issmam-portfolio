@@ -1,0 +1,23 @@
+{
+  "note": "Add a new photograph by dropping the file into assets/img/gallery/ and appending one object below. Nothing else needs to change.",
+  "collections": [
+    {
+      "id": "archive-2019",
+      "title": "Archive",
+      "year": "2019",
+      "blurb": "Early work, kept as it was shot. The gear was modest and the technique was still forming — these are here because they are where it started, not because they are the best of it. Newer work is coming.",
+      "photos": [
+        { "src": "assets/img/gallery/tiger.jpg",     "title": "Held",        "caption": "Behind the wire, looking past it.", "orientation": "landscape" },
+        { "src": "assets/img/gallery/jellyfish.jpg", "title": "Drift",       "caption": "Moon jelly, backlit against the dark.", "orientation": "landscape" },
+        { "src": "assets/img/gallery/medusa.jpg",    "title": "Filament",    "caption": "Almost nothing but tendrils and colour.", "orientation": "landscape" }
+      ]
+    },
+    {
+      "id": "recent",
+      "title": "Recent",
+      "year": "",
+      "blurb": "Reserved. New frames land here.",
+      "photos": []
+    }
+  ]
+}

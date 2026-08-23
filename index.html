@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Md Woasif Mehmud Issmam — Portfolio</title>
+<meta name="description" content="Md Woasif Mehmud Issmam (ishuboi) — Computer Science &amp; Engineering undergraduate at the Islamic University of Technology, Dhaka. Platform engineering, JavaFX systems, Flutter, machine learning and photography.">
+<meta name="author" content="Md Woasif Mehmud Issmam">
+<meta name="theme-color" content="#060806">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Md Woasif Mehmud Issmam — Portfolio">
+<meta property="og:description" content="You either build from it or you die out of it. CSE undergraduate at IUT — platform engineering, JavaFX systems, Flutter, ML and photography.">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060806'/%3E%3Cg stroke='%23C8FF2E' stroke-width='2.6' fill='none'%3E%3Ccircle cx='32' cy='32' r='21'/%3E%3Ccircle cx='32' cy='32' r='16.5'/%3E%3Cpath d='M32 15.5v33M15.5 32h33M20.3 20.3l23.4 23.4M43.7 20.3L20.3 43.7'/%3E%3C/g%3E%3Ccircle cx='32' cy='32' r='4' fill='%23C8FF2E'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============ Loader ============ -->
+<div id="loader">
+  <div class="lo">
+    <svg viewBox="0 0 64 64" aria-hidden="true">
+      <g class="rotor" stroke="var(--lime)" stroke-width="2" fill="none">
+        <circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="18"/>
+        <path d="M32 8v48M8 32h48M15 15l34 34M49 15L15 49"/>
+      </g>
+      <circle cx="32" cy="32" r="4" fill="var(--lime)"/>
+    </svg>
+    <div class="bar"><i id="loadbar"></i></div>
+    <div class="txt">Building</div>
+  </div>
+</div>
+
+<!-- ============ Ambient ============ -->
+<div class="veil" id="veil-pattern"></div>
+<div class="veil" id="veil-glow"></div>
+<div class="veil" id="veil-vignette"></div>
+<div class="veil" id="veil-grain"></div>
+<div class="veil" id="veil-scan"></div>
+
+<!-- ============ Cursor ============ -->
+<svg class="cursor" id="cursor-slice" viewBox="0 0 40 40" aria-hidden="true">
+  <g stroke="var(--lime)" stroke-width="1.3" fill="none" opacity="0.95">
+    <circle cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="11"/>
+    <path d="M20 6v28M6 20h28M10.1 10.1l19.8 19.8M29.9 10.1L10.1 29.9"/>
+  </g>
+</svg>
+<div class="cursor" id="cursor-dot"></div>
+
+<!-- ============ Chrome ============ -->
+<a class="chrome" id="brand" href="#home" aria-label="Home">
+  <svg class="mark" viewBox="0 0 64 64" aria-hidden="true">
+    <g class="rotor" stroke="currentColor" stroke-width="1.8" fill="none" style="color:var(--lime)">
+      <circle cx="32" cy="32" r="23"/><circle cx="32" cy="32" r="17.5"/>
+      <path d="M32 9v46M9 32h46M15.7 15.7l32.6 32.6M48.3 15.7L15.7 48.3"/>
+    </g>
+    <circle cx="32" cy="32" r="8.6" fill="var(--bg)"/>
+    <text x="32" y="36.4" text-anchor="middle" font-family="JetBrains Mono, monospace"
+          font-size="10.5" font-weight="700" fill="var(--lime)">WI</text>
+  </svg>
+  <span class="who"><b>Woasif Issmam</b><span>ishuboi</span></span>
+</a>
+
+<div class="chrome" id="tools">
+  <button class="chip icon-only" id="theme-btn" aria-label="Switch colour theme" title="Switch theme">
+    <svg id="theme-icon" viewBox="0 0 24 24" aria-hidden="true"></svg>
+  </button>
+  <button class="chip" id="menu-btn" aria-label="Open navigation" aria-expanded="false">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+    <span class="chip-label">Index</span>
+  </button>
+</div>
+
+<nav class="chrome" id="rail" aria-label="Sections"></nav>
+
+<div class="chrome" id="track-hint">
+  <button class="arrow" id="hint-prev" aria-label="Previous panel">
+    <svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+  </button>
+  <div class="pips" id="hint-pips"></div>
+  <button class="arrow" id="hint-next" aria-label="Next panel">
+    <svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+  </button>
+  <span class="label" id="hint-label"></span>
+</div>
+
+<div class="chrome" id="nudge">
+  <kbd>↑</kbd><kbd>↓</kbd><span>chapters</span>
+  <kbd>←</kbd><kbd>→</kbd><span>within</span>
+</div>
+
+<!-- ============ Menu ============ -->
+<div id="menu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <button class="chip icon-only close" id="menu-close" aria-label="Close navigation">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg>
+  </button>
+  <div class="sheet" id="menu-sheet"></div>
+</div>
+
+<!-- ============ Lightbox ============ -->
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Photograph">
+  <button class="chip icon-only lb-x" id="lb-close" aria-label="Close">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.3 5.7L12 12l6.3 6.3-1.4 1.4L10.6 13.4 4.3 19.7 2.9 18.3 9.2 12 2.9 5.7l1.4-1.4 6.3 6.3 6.3-6.3z"/></svg>
+  </button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous photograph"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Next photograph"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <div>
+    <img id="lb-img" alt="">
+    <div class="lb-cap"><b id="lb-title"></b><span id="lb-sub"></span></div>
+  </div>
+</div>
+
+<!-- ============ Stage ============ -->
+<main class="stage" id="stage">
+  <div class="rows" id="rows">
+
+    <!-- ROW 0 — HOME -->
+    <div class="row" data-row="home">
+      <section class="panel" id="p-home" data-panel="home" data-title="Home">
+        <div class="panel-inner">
+          <div class="hero-tag" data-lift="1"><span class="pulse"></span>Fourth semester · IUT · Dhaka</div>
+          <h1 class="h-xl hero-name">
+            <span class="ln"><span>Md Woasif</span></span>
+            <span class="ln"><span>Mehmud</span></span>
+            <span class="ln"><span>Issmam</span></span>
+          </h1>
+          <div class="hero-sub mono" data-lift="3">
+            <span>Computer Science &amp; Engineering</span><span class="sep"></span>
+            <span>Islamic University of Technology</span><span class="sep"></span>
+            <span class="lime">ishuboi</span>
+          </div>
+          <blockquote class="motto" data-lift="4">
+            <q>You either build from it or you die out of it.</q>
+            <cite>— the operating principle</cite>
+          </blockquote>
+          <div class="hero-cta" data-lift="5">
+            <a class="btn solid" href="#work">
+              <svg viewBox="0 0 24 24"><path d="M4 4h7v7H4V4zm9 0h7v7h-7V4zM4 13h7v7H4v-7zm9 0h7v7h-7v-7z"/></svg>
+              See the work
+            </a>
+            <a class="btn ghost" href="#contact">
+              <svg viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.4l8 5 8-5V7H4zm16 10v-7.2l-8 5-8-5V17h16z"/></svg>
+              Get in touch
+            </a>
+          </div>
+          <p class="scroll-cue" data-lift="6">Scroll, or use the arrow keys — this page moves in two directions.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROW 1 — ABOUT / ARSENAL -->
+    <div class="row" data-row="about">
+      <section class="panel" id="p-about" data-panel="about" data-title="About">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">01 — Who</p>
+            <h2 class="h-lg">Building the layer<br><span class="lime">underneath.</span></h2>
+          </header>
+          <div class="grid g-2" style="align-items:start">
+            <div data-lift="2" id="about-copy"></div>
+            <div data-lift="3">
+              <div class="card">
+                <p class="eyebrow mb-md">Right now</p>
+                <ul class="hl" id="about-now"></ul>
+              </div>
+              <div class="card mt-sm">
+                <p class="eyebrow mb-md">Based</p>
+                <p class="h-sm">Dhaka, Bangladesh</p>
+                <p class="mono mt-sm">Open to internships &amp; collaboration</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="p-arsenal" data-panel="arsenal" data-title="Arsenal">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">01.1 — Arsenal</p>
+            <h2 class="h-lg">What I <span class="lime">build with.</span></h2>
+          </header>
+          <div data-lift="2" id="stack-groups"></div>
+          <div class="legend" data-lift="3" id="stack-legend"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROW 2 — WORK -->
+    <div class="row" data-row="work">
+      <section class="panel" id="p-work" data-panel="work" data-title="Work">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">02 — Work</p>
+            <h2 class="h-lg">Things that had to<br><span class="lime">actually run.</span></h2>
+          </header>
+          <div class="work-list" data-lift="2" id="work-list"></div>
+          <p class="mono mt-md" data-lift="3">Press → or select a project to open it. Archive sits at the end of the track.</p>
+        </div>
+      </section>
+      <!-- project panels injected here -->
+      <section class="panel" id="p-archive" data-panel="archive" data-title="Archive">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">02.x — Archive</p>
+            <h2 class="h-lg">Smaller <span class="lime">builds.</span></h2>
+            <p class="lede mt-sm">Coursework, experiments and the things that taught me something on the way through.</p>
+          </header>
+          <div class="grid g-2" data-lift="2" id="archive-grid"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROW 3 — EDUCATION / ACHIEVEMENTS / LEADERSHIP -->
+    <div class="row" data-row="education">
+      <section class="panel" id="p-education" data-panel="education" data-title="Education">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">03 — Education</p>
+            <h2 class="h-lg">A straight line<br><span class="lime">so far.</span></h2>
+          </header>
+          <div class="streak" data-lift="2" id="streak"></div>
+          <div class="tl" data-lift="3" id="timeline"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="p-achievements" data-panel="achievements" data-title="Achievements">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">03.1 — Achievements</p>
+            <h2 class="h-lg">Marks on the <span class="lime">record.</span></h2>
+          </header>
+          <div class="grid g-2" data-lift="2" id="ach-grid"></div>
+          <p class="eyebrow mt-lg mb-sm" data-lift="3">Co-curricular</p>
+          <ul class="co-list" data-lift="3" id="co-list"></ul>
+        </div>
+      </section>
+
+      <section class="panel" id="p-leadership" data-panel="leadership" data-title="Leadership">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">03.2 — Leadership</p>
+            <h2 class="h-lg">Rooms I've <span class="lime">helped run.</span></h2>
+          </header>
+          <div data-lift="2" id="lead-list"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROW 4 — BEYOND / LENS -->
+    <div class="row" data-row="beyond">
+      <section class="panel" id="p-beyond" data-panel="beyond" data-title="Beyond">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">04 — Beyond</p>
+            <h2 class="h-lg">The rest of <span class="lime">the head.</span></h2>
+            <p class="lede mt-sm">Eight things I lose time to. They inform the work more than they should.</p>
+          </header>
+          <div class="int-grid" data-lift="2" id="int-grid"></div>
+        </div>
+      </section>
+
+      <section class="panel" id="p-lens" data-panel="lens" data-title="The Lens">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">04.1 — Issmam's Photography</p>
+            <h2 class="h-lg">Standing still long<br>enough to <span class="lime">notice.</span></h2>
+          </header>
+          <div data-lift="2" id="lens-body"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROW 5 — CONTACT / LETTER -->
+    <div class="row" data-row="contact">
+      <section class="panel" id="p-contact" data-panel="contact" data-title="Contact">
+        <div class="panel-inner">
+          <header class="section-head" data-lift="1">
+            <p class="eyebrow">05 — Contact</p>
+            <h2 class="h-lg">Say <span class="lime">something.</span></h2>
+          </header>
+          <div class="contact-grid">
+            <div data-lift="2" id="contact-lines"></div>
+            <div data-lift="3">
+              <p class="eyebrow mb-md">Elsewhere</p>
+              <div class="socials" id="socials"></div>
+              <div class="flexrow gap-sm mt-md" id="contact-cta"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="p-letter" data-panel="letter" data-title="Write a Letter">
+        <div class="panel-inner">
+          <div class="letter-wrap">
+            <div data-lift="1">
+              <svg class="seal" viewBox="0 0 64 64" aria-hidden="true">
+                <g class="rotor" stroke="var(--lime)" stroke-width="1.6" fill="none">
+                  <circle cx="32" cy="32" r="26"/><circle cx="32" cy="32" r="20"/>
+                  <path d="M32 6v52M6 32h52M13.5 13.5l37 37M50.5 13.5l-37 37"/>
+                </g>
+                <circle cx="32" cy="32" r="9" fill="var(--lime)"/>
+              </svg>
+              <p class="eyebrow mb-md">05.1 — The Letterbox</p>
+              <h2 class="h-lg">Write me a <span class="lime">letter.</span></h2>
+              <p class="body-text mt-md">Not a contact form. A letter — as long or as short as you like. Tell me what you're building, what you disagreed with, or what you want to make together.</p>
+              <p class="body-text">It opens in your own mail client, addressed and formatted, so nothing you write passes through anyone else's server. If your mail client doesn't open, copy it instead — the button is right there.</p>
+            </div>
+            <form class="paper" id="letter-form" data-lift="2" novalidate>
+              <div class="field">
+                <label for="lt-name">From</label>
+                <input id="lt-name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label for="lt-mail">Reply to</label>
+                <input id="lt-mail" name="email" type="email" placeholder="you@somewhere.com" autocomplete="email" required>
+              </div>
+              <div class="field">
+                <label for="lt-body">The letter</label>
+                <span class="count" id="lt-count">0</span>
+                <textarea id="lt-body" name="body" placeholder="Dear Issmam," required></textarea>
+              </div>
+              <div class="letter-actions">
+                <button class="btn solid" type="submit">
+                  <svg viewBox="0 0 24 24"><path d="M2 21l20-9L2 3v7l14 2-14 2v7z"/></svg>
+                  Seal &amp; send
+                </button>
+                <button class="btn ghost" type="button" id="lt-copy">
+                  <svg viewBox="0 0 24 24"><path d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z"/></svg>
+                  Copy instead
+                </button>
+                <span class="sent-note" id="lt-note"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </div>
+</main>
+
+<script src="assets/js/icons.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
