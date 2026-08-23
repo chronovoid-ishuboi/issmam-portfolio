@@ -1030,3 +1030,93 @@ html[data-theme="light"] .badge.gold { color: #fff; }
   .panel [data-lift] { opacity: 1; transform: none; }
   .hero-name .ln > span { transform: none; }
 }
+
+/* ---------- 19. Portraits ---------- */
+
+.portrait {
+  position: relative; margin: 0;
+  border: 1px solid var(--line); border-radius: 16px;
+  background: var(--bg-2); overflow: hidden;
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 5;
+  transition: transform 700ms var(--ease-o), border-color 700ms var(--ease-o);
+}
+.portrait img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: saturate(0.72) contrast(1.06);
+  transition: transform 1100ms var(--ease-o), filter 700ms var(--ease-o);
+}
+.portrait::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(6,8,6,0.82) 0%, transparent 46%),
+              linear-gradient(200deg, var(--lime-glow), transparent 58%);
+}
+html[data-theme="light"] .portrait::after {
+  background: linear-gradient(to top, rgba(20,28,10,0.66) 0%, transparent 46%),
+              linear-gradient(200deg, var(--lime-glow), transparent 58%);
+}
+.portrait:hover { transform: translateY(-5px); border-color: var(--lime); }
+.portrait:hover img { transform: scale(1.05); filter: saturate(1) contrast(1.1); }
+
+.portrait figcaption {
+  position: absolute; inset: auto 0 0 0; z-index: 2;
+  padding: 1.1rem 1.1rem 1rem;
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: #C9D8C0;
+}
+.portrait figcaption b { display: block; color: var(--lime); font-weight: 500; margin-bottom: 0.24rem; }
+
+/* Corner ticks — a viewfinder framing the subject */
+.portrait::before {
+  content: ""; position: absolute; z-index: 2;
+  inset: 10px; pointer-events: none; border-radius: 8px;
+  background:
+    linear-gradient(var(--lime), var(--lime)) 0 0 / 14px 1px no-repeat,
+    linear-gradient(var(--lime), var(--lime)) 0 0 / 1px 14px no-repeat,
+    linear-gradient(var(--lime), var(--lime)) 100% 100% / 14px 1px no-repeat,
+    linear-gradient(var(--lime), var(--lime)) 100% 100% / 1px 14px no-repeat;
+  opacity: 0.5; transition: opacity 700ms var(--ease-o), inset 700ms var(--ease-o);
+}
+.portrait:hover::before { opacity: 1; }
+
+/* Waiting state — mirrors the gallery placeholders */
+.portrait.empty { border-style: dashed; box-shadow: none; }
+.portrait.empty::after, .portrait.empty::before { display: none; }
+.portrait.empty:hover { transform: none; border-color: var(--line); }
+.portrait .waiting {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.6rem; padding: 1rem; text-align: center;
+}
+.portrait .waiting svg { width: 26px; height: 26px; fill: var(--line); }
+.portrait .waiting p {
+  font-family: var(--mono); font-size: 0.6rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-3);
+}
+.portrait .waiting code {
+  font-family: var(--mono); font-size: 0.57rem;
+  color: var(--lime); word-break: break-all;
+}
+
+/* Home — text beside a tall portrait */
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(230px, 24vw, 320px);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+}
+.hero-grid .portrait { aspect-ratio: 3 / 4; }
+@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-grid .portrait { display: none; } }
+
+/* Education & Beyond — portrait alongside the section heading */
+.head-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(160px, 17vw, 215px);
+  gap: clamp(1.2rem, 3vw, 2.6rem);
+  align-items: end;
+  margin-bottom: clamp(1.6rem, 3.4vh, 2.6rem);
+}
+.head-grid .section-head { margin-bottom: 0; }
+@media (max-width: 860px) { .head-grid { grid-template-columns: 1fr; } .head-grid .portrait { display: none; } }

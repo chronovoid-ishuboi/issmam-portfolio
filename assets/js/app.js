@@ -575,6 +575,27 @@
     openLightbox((lbIndex + d + LIGHTBOX.length) % LIGHTBOX.length);
   }
 
+    /* ---------- Portraits ---------- */
+
+  /* A portrait whose file is not uploaded yet degrades to a labelled slot
+     instead of a broken image. */
+  function initPortraits() {
+    $$('.portrait img').forEach(function (img) {
+      function fail() {
+        var fig = img.closest('.portrait');
+        fig.classList.add('empty');
+        img.remove();
+        var cap = fig.querySelector('figcaption');
+        if (cap) cap.remove();
+        fig.insertAdjacentHTML('beforeend',
+          '<div class="waiting">' + CAM + '<p>Awaiting upload</p><code>' +
+          img.getAttribute('src') + '</code></div>');
+      }
+      if (img.complete && img.naturalWidth === 0) fail();
+      else img.addEventListener('error', fail);
+    });
+  }
+
   /* ---------- Theme ---------- */
 
   var SUN = 'M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-13V1h0v3zm0 19v-3 3zM4.2 5.6L2.1 3.5l1.4-1.4 2.1 2.1zm14.2 14.2l2.1 2.1 1.4-1.4-2.1-2.1zM1 13v-2h3v2zm19 0v-2h3v2zM5.6 19.8l-2.1 2.1-1.4-1.4 2.1-2.1zM19.8 5.6l2.1-2.1-1.4-1.4-2.1 2.1z';
@@ -719,6 +740,7 @@
       Nav.build();
       wireInput();
       initCursor();
+      initPortraits();
 
       $('#lb-close').addEventListener('click', closeLightbox);
       $('#lb-prev').addEventListener('click', function () { shiftLightbox(-1); });
