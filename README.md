@@ -1,4 +1,4 @@
-# woasifissmam.github.io
+# issmam-portfolio
 
 Personal portfolio of **Md Woasif Mehmud Issmam** (`ishuboi`) — Computer Science &
 Engineering undergraduate at the Islamic University of Technology, Dhaka.
