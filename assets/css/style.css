@@ -1108,7 +1108,11 @@ html[data-theme="light"] .portrait::after {
   align-items: center;
 }
 .hero-grid .portrait { aspect-ratio: 3 / 4; }
-@media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-grid .portrait { display: none; } }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* Stack, don't hide — the portrait leads on a narrow screen. */
+  .hero-grid .portrait { order: -1; width: min(46vw, 190px); aspect-ratio: 3 / 4; }
+}
 
 /* Education & Beyond — portrait alongside the section heading */
 .head-grid {
@@ -1119,4 +1123,7 @@ html[data-theme="light"] .portrait::after {
   margin-bottom: clamp(1.6rem, 3.4vh, 2.6rem);
 }
 .head-grid .section-head { margin-bottom: 0; }
-@media (max-width: 860px) { .head-grid { grid-template-columns: 1fr; } .head-grid .portrait { display: none; } }
+@media (max-width: 860px) {
+  .head-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .head-grid .portrait { order: -1; width: min(40vw, 150px); }
+}
