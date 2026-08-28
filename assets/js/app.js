@@ -242,7 +242,6 @@
 
     $('#ach-grid').innerHTML = e.achievements.map(function (a, i) {
       return '<div class="card ach" data-tier="' + a.tier + '">' +
-        '<span class="rank">' + ('0' + (i + 1)) + '</span>' +
         '<div><h4>' + a.title + '</h4><p class="org">' + a.org + '</p><p>' + a.detail + '</p></div></div>';
     }).join('');
 
