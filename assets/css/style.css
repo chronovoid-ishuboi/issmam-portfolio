@@ -1479,7 +1479,7 @@ html[data-theme="light"] .proj-shot::after {
 .tl-item {
   position: relative;
   display: grid;
-  grid-template-columns: 72px minmax(0, 1fr);
+  grid-template-columns: 48px minmax(0, 1fr);
   gap: 1.2rem;
   align-items: start;
   padding: 1.3rem 1.4rem;
@@ -1512,26 +1512,15 @@ html[data-theme="light"] .proj-shot::after {
 .tl-logo {
   position: relative;
   margin: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid var(--line-soft);
-  background: var(--bg-2);
-  transition: border-color 460ms var(--ease-o);
-}
-
-.tl-item:hover .tl-logo {
-  border-color: var(--line);
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
 }
 
 .tl-logo img {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  padding: 9px;
 }
 
 .tl-logo.empty {
@@ -1539,15 +1528,17 @@ html[data-theme="light"] .proj-shot::after {
 }
 
 .tl-logo .waiting {
+  position: absolute;
+  inset: 0;
   display: grid;
-  place-items: center;
-  padding: 0.4rem;
+  place-content: center;
+  color: var(--ink-3);
 }
 
 .tl-logo .waiting svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--line);
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
 }
 
 .tl-logo .waiting p,
@@ -1611,8 +1602,8 @@ html[data-theme="light"] .proj-shot::after {
   }
 
   .tl-logo {
-    width: 56px;
-    height: 56px;
+    width: 42px;
+    height: 42px;
   }
 }
 
