@@ -2725,3 +2725,39 @@ html[data-theme="light"] .portrait::after {
     width: min(40vw, 150px);
   }
 }
+/* Back to Top button */
+.back-to-top {
+  position: absolute;
+  bottom: clamp(4rem, 8vh, 5rem);
+  right: var(--pad);
+  z-index: 99;
+  background: var(--lime);
+  color: #060806;
+  border-radius: 99px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.7rem;
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 16px rgba(200, 255, 46, 0.25);
+  transition: transform 300ms var(--ease-o), background 300ms ease;
+  text-decoration: none;
+}
+.back-to-top:hover {
+  transform: translateY(-2px);
+  background: #d4ff4d;
+}
+.back-to-top svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
