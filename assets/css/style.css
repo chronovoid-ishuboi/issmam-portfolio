@@ -2761,3 +2761,9 @@ html[data-theme="light"] .portrait::after {
   stroke-linejoin: round;
 }
 
+
+/* Scale up NDC logo to match others */
+.tl-logo img[src*="ndc"] {
+  transform: scale(1.35);
+}
+
