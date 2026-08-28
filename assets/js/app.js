@@ -22,36 +22,100 @@
                     .replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
-  /* ---------- Ambient backdrops (generated, not fetched) ---------- */
+  /* ---------- Ambient backdrops ---------- */
 
+  /* Film grain stays a tiled SVG; the lime field is drawn per-frame below. */
   function paintBackdrops() {
-    var slice = function (cx, cy, r, o) {
-      var p = '<g opacity="' + o + '" stroke="#C8FF2E" stroke-width="' + (r * 0.075) + '" fill="none">' +
-              '<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '"/>' +
-              '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r * 0.76) + '"/>';
-      for (var i = 0; i < 10; i++) {
-        var a = (Math.PI * 2 / 10) * i;
-        p += '<line x1="' + cx + '" y1="' + cy + '" x2="' + (cx + Math.cos(a) * r * 0.76) +
-             '" y2="' + (cy + Math.sin(a) * r * 0.76) + '"/>';
-      }
-      return p + '<circle cx="' + cx + '" cy="' + cy + '" r="' + (r * 0.09) + '" fill="#C8FF2E" stroke="none"/></g>';
-    };
-
-    var limes = '<svg xmlns="http://www.w3.org/2000/svg" width="460" height="460" viewBox="0 0 460 460">' +
-      slice(70, 78, 40, 1) + slice(268, 44, 27, 0.8) + slice(392, 128, 46, 0.95) +
-      slice(150, 214, 33, 0.85) + slice(320, 268, 38, 0.9) + slice(56, 336, 45, 0.95) +
-      slice(220, 384, 29, 0.8) + slice(404, 396, 34, 0.85) + slice(234, 148, 21, 0.7) +
-      '</svg>';
-
     var noise = '<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180">' +
       '<filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>' +
       '<feColorMatrix type="saturate" values="0"/></filter>' +
       '<rect width="180" height="180" filter="url(#n)"/></svg>';
-
-    var root = document.documentElement.style;
-    root.setProperty('--limes', 'url("data:image/svg+xml,' + encodeURIComponent(limes) + '")');
-    root.setProperty('--noise', 'url("data:image/svg+xml,' + encodeURIComponent(noise) + '")');
+    document.documentElement.style.setProperty(
+      '--noise', 'url("data:image/svg+xml,' + encodeURIComponent(noise) + '")');
   }
+
+  /* ---------- Drift field ----------
+     A lattice of dots, each orbiting its home slot on its own phase, so the
+     field ripples rather than sliding. Resting alpha is deliberately low —
+     the type has to win — and the cursor lifts a local pool of it. */
+
+  var Field = {
+    cv: null, ctx: null, dots: [], W: 0, H: 0, dpr: 1,
+    mx: -9999, my: -9999, hue: '200,255,46', raf: null,
+
+    GAP:   28,      // lattice spacing
+    SWING: 5,       // orbit radius
+    BASE:  0.045,   // resting alpha — low enough to sit under the headline
+    PEAK:  0.55,    // extra alpha at the cursor
+    REACH: 300,     // spotlight radius
+
+    init: function () {
+      this.cv = $('#veil-pattern');
+      if (!this.cv || !this.cv.getContext) return;
+      this.ctx = this.cv.getContext('2d');
+      this.dpr = Math.min(window.devicePixelRatio || 1, 2);
+      this.readHue();
+
+      var self = this;
+      this.resize();
+      window.addEventListener('resize', function () { self.resize(); });
+      document.addEventListener('mousemove', function (e) {
+        self.mx = e.clientX; self.my = e.clientY;
+      });
+      document.addEventListener('mouseleave', function () { self.mx = self.my = -9999; });
+
+      if (reduced) this.draw(0);
+      else this.raf = requestAnimationFrame(function (t) { self.tick(t); });
+    },
+
+    // Light mode swaps --lime for a darker green; follow whatever is current.
+    readHue: function () {
+      var c = getComputedStyle(document.documentElement).getPropertyValue('--lime').trim();
+      var m = /^#([0-9a-f]{6})$/i.exec(c);
+      if (m) {
+        var n = parseInt(m[1], 16);
+        this.hue = ((n >> 16) & 255) + ',' + ((n >> 8) & 255) + ',' + (n & 255);
+      }
+    },
+
+    resize: function () {
+      this.W = window.innerWidth; this.H = window.innerHeight;
+      this.cv.width = this.W * this.dpr;
+      this.cv.height = this.H * this.dpr;
+      this.ctx.setTransform(this.dpr, 0, 0, this.dpr, 0, 0);
+
+      this.dots = [];
+      for (var y = this.GAP * 0.5; y < this.H; y += this.GAP) {
+        for (var x = this.GAP * 0.5; x < this.W; x += this.GAP) {
+          this.dots.push({ hx: x, hy: y, ph: (x * 0.021 + y * 0.017) % 6.283 });
+        }
+      }
+      if (reduced) this.draw(0);
+    },
+
+    draw: function (t) {
+      var c = this.ctx, i, d, x, y, w, prox, e;
+      c.clearRect(0, 0, this.W, this.H);
+      for (i = 0; i < this.dots.length; i++) {
+        d = this.dots[i];
+        w = t * 0.55 + d.ph;
+        x = d.hx + Math.cos(w) * this.SWING;
+        y = d.hy + Math.sin(w * 1.3) * this.SWING;
+        prox = Math.max(0, 1 - Math.hypot(x - this.mx, y - this.my) / this.REACH);
+        e = prox * prox;
+        c.fillStyle = 'rgba(' + this.hue + ',' + (this.BASE + e * this.PEAK).toFixed(3) + ')';
+        c.beginPath();
+        c.arc(x, y, 0.65 + e * 1.9, 0, 6.283);
+        c.fill();
+      }
+    },
+
+    tick: function (ms) {
+      this.draw(ms / 1000);
+      var self = this;
+      this.raf = requestAnimationFrame(function (t) { self.tick(t); });
+    }
+  };
 
   /* ============================================================
      RENDERERS
@@ -83,6 +147,8 @@
   }
 
   var ARROW = '<svg viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8"/></svg>';
+  var CAM = '<svg viewBox="0 0 24 24"><path d="M9 3l-1.5 2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.5L15 3H9zm3 5.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5z"/></svg>';
+  var INFO = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>';
 
   function projectPanel(pr, n) {
     return '<section class="panel" id="p-' + pr.id + '" data-panel="' + pr.id + '" data-title="' + esc(pr.title) + '">' +
@@ -98,6 +164,8 @@
         '</div>' +
         '<div class="proj-grid">' +
           '<div data-lift="2">' +
+            (pr.img ? '<figure class="proj-shot"><img src="' + pr.img + '" alt="' +
+                      esc(pr.title) + '" loading="lazy"></figure>' : '') +
             '<p class="proj-lead">' + pr.lead + '</p>' +
             '<p class="body-text">' + pr.body + '</p>' +
             '<div class="chips mt-md">' + pr.stackLabels.map(function (l, i) {
@@ -150,22 +218,26 @@
   }
 
   function renderEducation(e) {
-    $('#streak').innerHTML =
-      '<div class="fives">' + ['PEC', 'JSC', 'SSC', 'HSC'].map(function (x) {
-        return '<div class="five">5<small>' + x + '</small></div>';
-      }).join('') + '</div>' +
-      '<div><p class="h-sm">' + e.streak.label + '</p><p class="mono mt-sm">' + e.streak.detail + '</p></div>';
-
+    /* One card per institution. St. Joseph hosted three examinations, so it
+       carries one crest and three result rows rather than three copies. */
     $('#timeline').innerHTML = e.timeline.map(function (t) {
-      var badges = '';
-      if (t.result) badges += '<span class="badge' + (t.current ? ' plain' : '') + '">' + t.result + '</span>';
-      if (t.board)  badges += '<span class="badge plain">' + t.board + '</span>';
-      if (t.award)  badges += '<span class="badge gold">★ ' + t.award + '</span>';
+      var exams = t.exams.map(function (x) {
+        var badges = (x.badges || []).map(function (b) {
+          return '<span class="badge' + (b.kind ? ' ' + b.kind : '') + '">' + b.text + '</span>';
+        }).join('');
+        return '<div class="tl-exam"><p class="ttl">' + x.title + '</p>' +
+               (badges ? '<div class="res">' + badges + '</div>' : '') + '</div>';
+      }).join('');
+
       return '<div class="tl-item' + (t.current ? ' now' : '') + '">' +
-        '<p class="per">' + t.period + '</p>' +
-        '<p class="ttl">' + t.title + '</p>' +
-        '<p class="inst">' + t.institution + (t.note ? ' — ' + t.note : '') + '</p>' +
-        (badges ? '<div class="res">' + badges + '</div>' : '') + '</div>';
+        '<figure class="tl-logo"><img src="' + t.logo + '" alt="' + esc(t.institution) +
+          '" loading="lazy"></figure>' +
+        '<div>' +
+          '<p class="per">' + t.period + '</p>' +
+          '<p class="inst">' + t.institution + '</p>' +
+          (t.note ? '<p class="note">' + t.note + '</p>' : '') +
+          '<div class="tl-exams">' + exams + '</div>' +
+        '</div></div>';
     }).join('');
 
     $('#ach-grid').innerHTML = e.achievements.map(function (a, i) {
@@ -191,17 +263,17 @@
         ? '<button class="card int" data-goto="' + c.link + '">'
         : '<div class="card int">';
       var end = c.link ? '</button>' : '</div>';
-      return tag +
-        '<span class="n">' + c.eyebrow + '</span>' +
+      var shot = c.img
+        ? '<figure class="int-shot"><img src="' + c.img + '" alt="' + esc(c.title) +
+          '" loading="lazy"></figure>'
+        : '';
+      return tag + shot +
         '<h3>' + c.title + '</h3>' +
         '<p class="ln">' + c.line + '</p>' +
         '<p>' + c.body + '</p>' +
         '<span class="tg">' + c.tag + (c.link ? ' — open' : '') + '</span>' + end;
     }).join('');
   }
-
-  var CAM = '<svg viewBox="0 0 24 24"><path d="M9 3l-1.5 2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.5L15 3H9zm3 5.5A5.5 5.5 0 1 1 6.5 14 5.5 5.5 0 0 1 12 8.5zm0 2A3.5 3.5 0 1 0 15.5 14 3.5 3.5 0 0 0 12 10.5z"/></svg>';
-  var INFO = '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/></svg>';
 
   var LIGHTBOX = [];
 
@@ -211,9 +283,8 @@
       '<span><b>These are from 2019.</b> Early frames, kept as they were shot — the gear was modest and the technique was still forming. They are here because they are where it started, not because they are the best of it. Newer work lands in the next collection.</span></div>';
 
     g.collections.forEach(function (col) {
-      html += '<div class="mt-lg"><div class="flexrow gap-sm mb-sm">' +
-        '<p class="eyebrow">' + col.title + (col.year ? ' — ' + col.year : '') + '</p>' +
-        '<span class="pill">' + (col.photos.length || 'open') + (col.photos.length ? ' frames' : ' slot') + '</span></div>' +
+      html += '<div class="mt-lg">' +
+        '<p class="eyebrow mb-sm">' + col.title + (col.year ? ' — ' + col.year : '') + '</p>' +
         '<p class="body-text mb-md" style="font-size:.87rem">' + col.blurb + '</p><div class="shots">';
 
       col.photos.forEach(function (ph) {
@@ -228,18 +299,13 @@
           '<span class="cap"><b>' + ph.title + '</b><span>' + ph.caption + '</span></span></button>';
       });
 
-      var slots = col.photos.length ? 1 : 3;
+      var slots = col.photos.length ? 1 : 4;
       for (var k = 0; k < slots; k++) {
         html += '<div class="shot slot"><div class="ph">' + CAM +
-          '<p>Room for more</p><code>assets/img/gallery/</code></div></div>';
+          '<p>Room for more</p></div></div>';
       }
       html += '</div></div>';
     });
-
-    html += '<div class="card mt-lg"><p class="eyebrow mb-sm">Adding a photograph</p>' +
-      '<p class="body-text" style="font-size:.86rem">Drop the file into <code class="lime">assets/img/gallery/</code> and append one entry to ' +
-      '<code class="lime">data/gallery.json</code>. The grid, the lightbox and the counters all rebuild themselves. ' +
-      'Empty slots stay as placeholders instead of breaking.</p></div>';
 
     $('#lens-body').innerHTML = html;
   }
@@ -258,7 +324,7 @@
 
     lines += '<a class="cline" href="tel:' + p.phone.replace(/\s/g, '') + '">' +
       '<span class="ic">' + PHONE + '</span>' +
-      '<span><span class="lb">Phone</span><span class="vl">Tap to call — number stays hidden</span></span>' +
+      '<span><span class="lb">Phone</span><span class="vl">Tap to call</span></span>' +
       '<span class="go">Call →</span></a>';
 
     lines += '<div class="cline"><span class="ic">' + PIN + '</span>' +
@@ -580,9 +646,9 @@
   /* A portrait whose file is not uploaded yet degrades to a labelled slot
      instead of a broken image. */
   function initPortraits() {
-    $$('.portrait img').forEach(function (img) {
+    $$('.portrait img, .int-shot img, .proj-shot img, .tl-logo img').forEach(function (img) {
       function fail() {
-        var fig = img.closest('.portrait');
+        var fig = img.closest('.portrait, .int-shot, .proj-shot, .tl-logo');
         fig.classList.add('empty');
         img.remove();
         var cap = fig.querySelector('figcaption');
@@ -606,6 +672,8 @@
     $('#theme-icon').innerHTML = '<path d="' + (t === 'dark' ? MOON : SUN) + '"/>';
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', t === 'dark' ? '#060806' : '#F4F6EF');
+    Field.readHue();
+    if (reduced) Field.draw(0);
     try { localStorage.setItem('wi-theme', t); } catch (err) {}
   }
 
@@ -741,6 +809,7 @@
       wireInput();
       initCursor();
       initPortraits();
+      Field.init();
 
       $('#lb-close').addEventListener('click', closeLightbox);
       $('#lb-prev').addEventListener('click', function () { shiftLightbox(-1); });

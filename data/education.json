@@ -2,60 +2,70 @@
   "timeline": [
     {
       "id": "iut",
+      "logo": "assets/img/logos/iut.png",
       "period": "2024 — present",
-      "title": "BSc in Computer Science &amp; Engineering",
       "institution": "Islamic University of Technology (IUT), OIC",
       "note": "Currently in the fourth semester.",
-      "result": "In progress",
-      "board": "",
-      "current": true
+      "current": true,
+      "exams": [
+        {
+          "title": "BSc in Computer Science &amp; Engineering",
+          "badges": [{ "text": "In progress", "kind": "plain" }]
+        }
+      ]
     },
     {
-      "id": "hsc",
+      "id": "ndc",
+      "logo": "assets/img/logos/ndc.png",
       "period": "2022 — 2023",
-      "title": "Higher Secondary Certificate (HSC)",
       "institution": "Notre Dame College, Dhaka",
       "note": "",
-      "result": "GPA 5.00",
-      "board": "Dhaka Board",
-      "award": "General Scholarship, Dhaka Board",
-      "current": false
+      "current": false,
+      "exams": [
+        {
+          "title": "Higher Secondary Certificate (HSC) · 2023",
+          "badges": [
+            { "text": "Science" },
+            { "text": "GPA 5.00" },
+            { "text": "Dhaka Board", "kind": "plain" },
+            { "text": "★ General Scholarship, Dhaka Board", "kind": "gold" }
+          ]
+        }
+      ]
     },
     {
-      "id": "ssc",
+      "id": "stjoseph",
+      "logo": "assets/img/logos/stjoseph.png",
       "period": "2013 — 2021",
-      "title": "Secondary School Certificate (SSC)",
       "institution": "St. Joseph Higher Secondary School",
-      "note": "",
-      "result": "GPA 5.00",
-      "board": "Dhaka Board",
-      "current": false
-    },
-    {
-      "id": "jsc",
-      "period": "2018",
-      "title": "Junior School Certificate (JSC)",
-      "institution": "St. Joseph Higher Secondary School",
-      "note": "",
-      "result": "GPA 5.00",
-      "board": "Dhaka Board",
-      "current": false
-    },
-    {
-      "id": "pec",
-      "period": "2015",
-      "title": "Primary Education Completion (PEC)",
-      "institution": "St. Joseph Higher Secondary School",
-      "note": "",
-      "result": "GPA 5.00",
-      "board": "Dhaka Board",
-      "current": false
+      "note": "Eight years, three public examinations, three perfect scores.",
+      "current": false,
+      "exams": [
+        {
+          "title": "Secondary School Certificate (SSC) · 2021",
+          "badges": [
+            { "text": "Science" },
+            { "text": "GPA 5.00" },
+            { "text": "Dhaka Board", "kind": "plain" }
+          ]
+        },
+        {
+          "title": "Junior School Certificate (JSC) · 2018",
+          "badges": [
+            { "text": "GPA 5.00" },
+            { "text": "Dhaka Board", "kind": "plain" }
+          ]
+        },
+        {
+          "title": "Primary Education Completion (PEC) · 2015",
+          "badges": [
+            { "text": "GPA 5.00" },
+            { "text": "Dhaka Board", "kind": "plain" }
+          ]
+        }
+      ]
     }
   ],
-  "streak": {
-    "label": "Four public examinations. Four perfect scores.",
-    "detail": "PEC · JSC · SSC · HSC — GPA 5.00 in every one, all under Dhaka Board."
-  },
   "achievements": [
     {
       "title": "General Scholarship",

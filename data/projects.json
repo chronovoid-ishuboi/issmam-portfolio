@@ -19,8 +19,19 @@
         "Administrator dashboard with demand analytics",
         "89 source files, unit-tested, nine architecture documents"
       ],
-      "stack": ["openjdk", "javafx", "apachemaven", "mysql"],
-      "stackLabels": ["Java 21", "JavaFX 21", "Maven", "MySQL 8"]
+      "stack": [
+        "openjdk",
+        "javafx",
+        "apachemaven",
+        "mysql"
+      ],
+      "stackLabels": [
+        "Java 21",
+        "JavaFX 21",
+        "Maven",
+        "MySQL 8"
+      ],
+      "img": "assets/img/projects/bloodlink.jpg"
     },
     {
       "id": "ishuchats",
@@ -40,8 +51,21 @@
         "Text and image messages with persistent history",
         "Bundled dark and light themes"
       ],
-      "stack": ["openjdk", "javafx", "mysql", "apachemaven"],
-      "stackLabels": ["Java 21", "JavaFX 21", "TCP Sockets", "MySQL", "Gson", "jBCrypt"]
+      "stack": [
+        "openjdk",
+        "javafx",
+        "mysql",
+        "apachemaven"
+      ],
+      "stackLabels": [
+        "Java 21",
+        "JavaFX 21",
+        "TCP Sockets",
+        "MySQL",
+        "Gson",
+        "jBCrypt"
+      ],
+      "img": "assets/img/projects/ishuchats.jpg"
     },
     {
       "id": "fsm",
@@ -61,8 +85,13 @@
         "Zero external dependencies — standard library only",
         "Built with a team of three"
       ],
-      "stack": ["python"],
-      "stackLabels": ["Python 3"]
+      "stack": [
+        "python"
+      ],
+      "stackLabels": [
+        "Python 3"
+      ],
+      "img": "assets/img/projects/fsm.jpg"
     },
     {
       "id": "quake",
@@ -80,8 +109,14 @@
         "Encapsulated state with controlled interfaces",
         "Collaborative build"
       ],
-      "stack": ["cplusplus"],
-      "stackLabels": ["C++", "OOP"]
+      "stack": [
+        "cplusplus"
+      ],
+      "stackLabels": [
+        "C++",
+        "OOP"
+      ],
+      "img": "assets/img/projects/quake.jpg"
     }
   ],
   "more": [
@@ -89,40 +124,67 @@
       "id": "snake",
       "title": "Terminal Snake",
       "blurb": "Classic Snake running inside the Windows terminal with zero graphical dependencies — raw escape sequences, an adaptive board that resizes to the window, and a snake that speeds up as it grows.",
-      "stack": ["c"],
-      "stackLabels": ["C"],
+      "stack": [
+        "c"
+      ],
+      "stackLabels": [
+        "C"
+      ],
       "repo": "https://github.com/chronovoid-ishuboi/snake-game-on-terminal-for-windows"
     },
     {
       "id": "moments",
       "title": "Moments",
       "blurb": "A JavaFX stories-feed interface — user rings, timed story items and a full FXML/CSS presentation layer separated cleanly from the model.",
-      "stack": ["openjdk", "javafx"],
-      "stackLabels": ["Java", "JavaFX", "FXML"],
+      "stack": [
+        "openjdk",
+        "javafx"
+      ],
+      "stackLabels": [
+        "Java",
+        "JavaFX",
+        "FXML"
+      ],
       "repo": "https://github.com/chronovoid-ishuboi/storiesapp"
     },
     {
       "id": "loginmaker",
       "title": "Login Maker",
       "blurb": "A login interface built from scratch in plain HTML, CSS and JavaScript — an early exercise in getting a single screen to feel finished.",
-      "stack": ["html5", "css", "javascript"],
-      "stackLabels": ["HTML", "CSS", "JavaScript"],
+      "stack": [
+        "html5",
+        "css",
+        "javascript"
+      ],
+      "stackLabels": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ],
       "repo": "https://github.com/chronovoid-ishuboi/Login-maker"
     },
     {
       "id": "clock",
       "title": "Terminal Clock",
       "blurb": "A live-updating terminal clock in C++ with switchable 12-hour and 24-hour formats, redrawing in place every second.",
-      "stack": ["cplusplus"],
-      "stackLabels": ["C++"],
+      "stack": [
+        "cplusplus"
+      ],
+      "stackLabels": [
+        "C++"
+      ],
       "repo": "https://github.com/chronovoid-ishuboi/Clock"
     },
     {
       "id": "tictactoe",
       "title": "Tic-Tac-Toe, One Dimension",
       "blurb": "Two-player Tic-Tac-Toe where the board is a single flat array — the constraint being the entire point of the exercise.",
-      "stack": ["c"],
-      "stackLabels": ["C"],
+      "stack": [
+        "c"
+      ],
+      "stackLabels": [
+        "C"
+      ],
       "repo": "https://github.com/chronovoid-ishuboi/Tic-tac-toe-pvp-1D-array"
     }
   ]
