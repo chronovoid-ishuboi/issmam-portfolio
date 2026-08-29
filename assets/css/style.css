@@ -2990,3 +2990,8 @@ html[data-theme="light"] .ishubot-msg.bot {
   z-index: 1;
 }
 
+
+#ishubot-container { pointer-events: none; }
+#ishubot-avatar { pointer-events: auto; }
+#ishubot-window:not(.hidden) { pointer-events: auto; }
+
