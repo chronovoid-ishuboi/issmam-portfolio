@@ -2815,7 +2815,7 @@ html[data-theme="light"] .portrait::after {
   width: 320px;
   height: 400px;
   max-height: 60vh;
-  background-color: var(--surface);
+  background-color: var(--bg);
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: var(--shadow);
@@ -2941,5 +2941,14 @@ html[data-theme="light"] .portrait::after {
 #ishubot-form button svg {
   width: 14px;
   height: 14px;
+}
+
+
+
+/* Invert pattern in dark mode (default) so the black strokes become white/visible */
+html:not([data-theme="light"]) .paper::before,
+html:not([data-theme="light"]) #ishubot-window::before {
+  filter: invert(1);
+  opacity: 0.08;
 }
 
