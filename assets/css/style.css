@@ -2728,10 +2728,12 @@ html[data-theme="light"] .portrait::after {
 }
 /* Back to Top button */
 .back-to-top {
-  position: fixed;
-  bottom: clamp(4rem, 8vh, 5rem);
-  right: var(--pad);
-  z-index: 99;
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+  margin-top: 4rem;
   background: var(--lime);
   color: #060806;
   border-radius: 99px;
