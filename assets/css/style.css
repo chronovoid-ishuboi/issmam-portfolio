@@ -1047,6 +1047,7 @@ html[data-theme="light"] .btn.solid {
 }
 
 .work-row {
+  position: relative;
   display: grid;
   grid-template-columns: 3.2rem 1fr auto;
   align-items: center;
@@ -2952,3 +2953,33 @@ html:not([data-theme="light"]) #ishubot-window::before {
   opacity: 0.08;
 }
 
+
+
+/* Project and Academic boxes pattern */
+.tl-item::after,
+.work-row::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("../img/lando-pattern-transparent.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+html:not([data-theme="light"]) .tl-item::after,
+html:not([data-theme="light"]) .work-row::after {
+  filter: invert(1);
+  opacity: 0.08;
+}
+html[data-theme="light"] .ishubot-msg.bot {
+  background: #ffffff;
+}
+
+
+.work-row > *, .tl-item > * {
+  position: relative;
+  z-index: 1;
+}

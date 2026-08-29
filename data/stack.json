@@ -26,8 +26,8 @@
       ]
     },
     {
-      "name": "Machine Learning",
-      "note": "Regression, classification and instance-based methods — from the maths up.",
+      "name": "Machine Learning & Graphics Design",
+      "note": "Regression, classification and instance-based methods - exploring from the maths up, while aspiring to dive deeper into graphics design.",
       "items": [
         { "icon": "numpy",  "label": "NumPy",  "level": "learning" },
         { "icon": "pandas", "label": "pandas", "level": "learning" }
