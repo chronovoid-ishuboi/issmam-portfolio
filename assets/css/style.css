@@ -2956,8 +2956,11 @@ html:not([data-theme="light"]) #ishubot-window::before {
 
 
 /* Project and Academic boxes pattern */
-.tl-item::after,
-.work-row::after {
+.work-row::after,
+.motto::after,
+.btn::after,
+.card::after,
+.soc::after {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -2969,8 +2972,11 @@ html:not([data-theme="light"]) #ishubot-window::before {
   z-index: 0;
   border-radius: inherit;
 }
-html:not([data-theme="light"]) .tl-item::after,
-html:not([data-theme="light"]) .work-row::after {
+html:not([data-theme="light"]) .work-row::after,
+html:not([data-theme="light"]) .motto::after,
+html:not([data-theme="light"]) .btn::after,
+html:not([data-theme="light"]) .card::after,
+html:not([data-theme="light"]) .soc::after {
   filter: invert(1);
   opacity: 0.08;
 }
@@ -2978,8 +2984,12 @@ html[data-theme="light"] .ishubot-msg.bot {
   background: #ffffff;
 }
 
+.work-row, .motto, .btn, .card, .soc {
+  position: relative;
+  overflow: hidden;
+}
 
-.work-row > *, .tl-item > * {
+.work-row > *, .motto > *, .btn > *, .card > *, .soc > * {
   position: relative;
   z-index: 1;
 }
