@@ -668,7 +668,7 @@
 
   function applyTheme(t) {
     document.documentElement.setAttribute('data-theme', t);
-    $('#theme-icon').innerHTML = '<path d="' + (t === 'dark' ? MOON : SUN) + '"/>';
+    $('#theme-icon').innerHTML = '<path d="' + (t === 'dark' ? SUN : MOON) + '"/>';
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta) meta.setAttribute('content', t === 'dark' ? '#060806' : '#F4F6EF');
     Field.readHue();
