@@ -835,7 +835,69 @@
     });
   }
 
+  /* ---------- Ishubot Logic ---------- */
+  function initIshubot() {
+    var avatar = $('#ishubot-avatar');
+    var win = $('#ishubot-window');
+    var closeBtn = $('#ishubot-close');
+    var form = $('#ishubot-form');
+    var input = $('#ishubot-input');
+    var messages = $('#ishubot-messages');
+
+    if (!avatar || !win) return;
+
+    avatar.addEventListener('click', function() {
+      win.classList.remove('hidden');
+      input.focus();
+    });
+
+    closeBtn.addEventListener('click', function() {
+      win.classList.add('hidden');
+    });
+
+    function addMessage(text, isBot) {
+      var msg = document.createElement('div');
+      msg.className = 'ishubot-msg ' + (isBot ? 'bot' : 'user');
+      msg.textContent = text;
+      messages.appendChild(msg);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var text = input.value.trim();
+      if (!text) return;
+      
+      addMessage(text, false);
+      input.value = '';
+
+      // Simple keyword matching for responses
+      setTimeout(function() {
+        var lower = text.toLowerCase();
+        if (lower.includes('f1') || lower.includes('formula 1') || lower.includes('formula one') || lower.includes('motorsport')) {
+          addMessage("I love Formula 1! The engineering and aerodynamics are fascinating—especially how drag and grip balance perfectly at those speeds.", true);
+        } else if (lower.includes('football') || lower.includes('soccer')) {
+          addMessage("I'm a big football fan! Ninety minutes of pure strategy and athleticism.", true);
+        } else if (lower.includes('cat') || lower.includes('pet')) {
+          addMessage("I really like cats! They're independent, interesting, and perfect little systems.", true);
+        } else if (lower.includes('cricket')) {
+          addMessage("Cricket is great—I love how it stretches patience across five days and still calls a draw a valid outcome.", true);
+        } else if (lower.includes('contact') || lower.includes('email') || lower.includes('hire') || lower.includes('letter')) {
+          addMessage("You can write me a letter right here on this site! Just navigate to the 'Write a Letter' section at the end of the portfolio.", true);
+        } else if (lower.includes('skills') || lower.includes('tech') || lower.includes('stack')) {
+          addMessage("I work primarily with Flutter, Dart, JavaFX, and modern web tech. You can check out my 'Stack' section to see everything!", true);
+        } else if (lower.includes('project') || lower.includes('work') || lower.includes('built')) {
+          addMessage("I've built several things like an AI-powered fitness app, real-time chats, and more. Take a look at the 'Selected Works' section!", true);
+        } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
+          addMessage("Hello there! I'm Ishubot. What would you like to know about Issmam?", true);
+        } else {
+          addMessage("That's interesting! I don't have a specific answer for that yet, but you can always write a letter to Issmam in the contact section if you want to know more.", true);
+        }
+      }, 500);
+    });
+  }
+
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
-  } else { boot(); }
+    document.addEventListener('DOMContentLoaded', function() { boot(); initIshubot(); });
+  } else { boot(); initIshubot(); }
 })();
