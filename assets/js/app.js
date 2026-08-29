@@ -326,7 +326,7 @@
       '<span><span class="lb">Phone</span><span class="vl">Tap to call</span></span>' +
       '<span class="go">Call →</span></a>';
 
-    lines += '<div class="cline pattern-box"><span class="ic">' + PIN + '</span>' +
+    lines += '<div class="cline"><span class="ic">' + PIN + '</span>' +
       '<span><span class="lb">Located</span><span class="vl">' + p.location + '</span></span></div>';
 
     $('#contact-lines').innerHTML = lines;
@@ -334,8 +334,8 @@
     $('#socials').innerHTML = p.social.map(function (s) {
       var inner = icon(s.id) + '<span><span class="t">' + s.label + '</span><br><span class="h">' + s.handle + '</span></span>';
       return s.url
-        ? '<a class="soc pattern-box" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
-        : '<button class="soc pattern-box" data-copy="' + esc(s.handle) + '" title="Copy handle">' + inner + '</button>';
+        ? '<a class="soc" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
+        : '<button class="soc" data-copy="' + esc(s.handle) + '" title="Copy handle">' + inner + '</button>';
     }).join('');
 
     $('#contact-cta').innerHTML =
