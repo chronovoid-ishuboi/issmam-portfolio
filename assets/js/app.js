@@ -177,7 +177,7 @@
                 icon('github') + 'Source' + '</a>' +
             '</div>' +
           '</div>' +
-          '<div data-lift="3"><div class="card">' +
+          '<div data-lift="3"><div class="card pattern-box">' +
             '<p class="eyebrow mb-md">What is in it</p>' +
             '<ul class="hl">' + pr.highlights.map(function (h) { return '<li>' + h + '</li>'; }).join('') + '</ul>' +
           '</div></div>' +
@@ -195,13 +195,13 @@
     });
 
     $('#work-list').innerHTML = data.featured.map(function (pr, i) {
-      return '<button class="work-row" data-goto="' + pr.id + '">' +
+      return '<button class="work-row pattern-box" data-goto="' + pr.id + '">' +
         '<span class="idx">0' + (i + 1) + '</span>' +
         '<span><span class="ttl">' + pr.title + '</span>' +
         '<span class="kick">' + pr.kicker + ' · ' + pr.year + '</span></span>' +
         '<span class="go">' + ARROW + '</span></button>';
     }).join('') +
-    '<button class="work-row" data-goto="archive">' +
+    '<button class="work-row pattern-box" data-goto="archive">' +
       '<span class="idx">0' + (data.featured.length + 1) + '</span>' +
       '<span><span class="ttl">Archive</span><span class="kick">' + data.more.length +
       ' smaller builds · C, C++, JavaFX, Web</span></span>' +
@@ -326,7 +326,7 @@
       '<span><span class="lb">Phone</span><span class="vl">Tap to call</span></span>' +
       '<span class="go">Call →</span></a>';
 
-    lines += '<div class="cline"><span class="ic">' + PIN + '</span>' +
+    lines += '<div class="cline pattern-box"><span class="ic">' + PIN + '</span>' +
       '<span><span class="lb">Located</span><span class="vl">' + p.location + '</span></span></div>';
 
     $('#contact-lines').innerHTML = lines;
@@ -334,14 +334,14 @@
     $('#socials').innerHTML = p.social.map(function (s) {
       var inner = icon(s.id) + '<span><span class="t">' + s.label + '</span><br><span class="h">' + s.handle + '</span></span>';
       return s.url
-        ? '<a class="soc" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
-        : '<button class="soc" data-copy="' + esc(s.handle) + '" title="Copy handle">' + inner + '</button>';
+        ? '<a class="soc pattern-box" href="' + s.url + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
+        : '<button class="soc pattern-box" data-copy="' + esc(s.handle) + '" title="Copy handle">' + inner + '</button>';
     }).join('');
 
     $('#contact-cta').innerHTML =
       '<a class="btn solid" href="' + p.resume + '" download>' +
         '<svg viewBox="0 0 24 24"><path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4L12 13.2V3zM5 19h14v2H5z"/></svg>Download CV</a>' +
-      '<button class="btn ghost" data-goto="letter">' +
+      '<button class="btn ghost pattern-box" data-goto="letter">' +
         '<svg viewBox="0 0 24 24"><path d="M3 3h18v4H3zm0 6h18v12H3zm3 3v2h12v-2z"/></svg>Write a letter</button>';
   }
 

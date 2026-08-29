@@ -2955,12 +2955,15 @@ html:not([data-theme="light"]) #ishubot-window::before {
 
 
 
-/* Project and Academic boxes pattern */
-.work-row::after,
-.motto::after,
-.btn::after,
-.card::after,
-.soc::after {
+/* Pattern boxes */
+.pattern-box {
+  position: relative;
+}
+.pattern-box > * {
+  position: relative;
+  z-index: 1;
+}
+.pattern-box::before {
   content: "";
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
@@ -2972,24 +2975,12 @@ html:not([data-theme="light"]) #ishubot-window::before {
   z-index: 0;
   border-radius: inherit;
 }
-html:not([data-theme="light"]) .work-row::after,
-html:not([data-theme="light"]) .motto::after,
-html:not([data-theme="light"]) .btn::after,
-html:not([data-theme="light"]) .card::after,
-html:not([data-theme="light"]) .soc::after {
+html:not([data-theme="light"]) .pattern-box::before {
   filter: invert(1);
   opacity: 0.08;
 }
+
 html[data-theme="light"] .ishubot-msg.bot {
   background: #ffffff;
 }
 
-.work-row, .motto, .btn, .card, .soc {
-  position: relative;
-  overflow: hidden;
-}
-
-.work-row > *, .motto > *, .btn > *, .card > *, .soc > * {
-  position: relative;
-  z-index: 1;
-}
