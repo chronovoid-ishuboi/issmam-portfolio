@@ -2984,3 +2984,9 @@ html[data-theme="light"] .ishubot-msg.bot {
   background: #ffffff;
 }
 
+
+.btn, .card, .soc, .motto, .work-row {
+  position: relative;
+  z-index: 1;
+}
+
