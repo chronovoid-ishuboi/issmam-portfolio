@@ -60,7 +60,7 @@
       this.resize();
       window.addEventListener('resize', function () { self.resize(); });
       document.addEventListener('mousemove', function (e) {
-        if (e.target.closest('.card, .pattern-box, .tl-item, .work-row, .btn, .motto, .soc, #ishubot-window')) {
+        if (e.target.closest('.card, .pattern-box, .tl-item, .work-row, .btn, .motto, .soc, .tile, .paper, #ishubot-window')) {
           self.mx = -9999; self.my = -9999;
           document.body.classList.add('no-spotlight');
         } else {
