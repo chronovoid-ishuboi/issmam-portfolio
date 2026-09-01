@@ -159,7 +159,7 @@ html[data-theme="light"] ::selection {
   z-index: 1;
   background: radial-gradient(620px circle at var(--mx, 50%) var(--my, 40%),
       var(--lime-glow), transparent 68%);
-  transition: background 260ms linear;
+  transition: background 260ms linear, opacity 260ms linear;
 }
 
 #veil-vignette {
@@ -2994,4 +2994,9 @@ html[data-theme="light"] .ishubot-msg.bot {
 #ishubot-container { pointer-events: none; }
 #ishubot-avatar { pointer-events: auto; }
 #ishubot-window:not(.hidden) { pointer-events: auto; }
+
+
+body.no-spotlight #veil-glow {
+  opacity: 0 !important;
+}
 

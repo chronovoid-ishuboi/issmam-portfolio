@@ -60,7 +60,13 @@
       this.resize();
       window.addEventListener('resize', function () { self.resize(); });
       document.addEventListener('mousemove', function (e) {
-        self.mx = e.clientX; self.my = e.clientY;
+        if (e.target.closest('.card, .pattern-box, .tl-item, .work-row, .btn, .motto, .soc, #ishubot-window')) {
+          self.mx = -9999; self.my = -9999;
+          document.body.classList.add('no-spotlight');
+        } else {
+          self.mx = e.clientX; self.my = e.clientY;
+          document.body.classList.remove('no-spotlight');
+        }
       });
       document.addEventListener('mouseleave', function () { self.mx = self.my = -9999; });
 
