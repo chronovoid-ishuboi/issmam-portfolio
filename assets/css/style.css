@@ -2685,10 +2685,9 @@ html[data-theme="light"] .portrait::after {
   display: block;
   margin: 0 auto;
   opacity: 0.9;
-  filter: invert(1);
 }
 html[data-theme="light"] .hero-sig {
-  filter: invert(0);
+  filter: invert(1);
 }
 
 @media (max-width: 900px) {
