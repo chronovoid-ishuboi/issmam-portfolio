@@ -890,7 +890,13 @@
       // Simple keyword matching for responses
       setTimeout(function() {
         var lower = text.toLowerCase();
-        if (lower.includes('f1') || lower.includes('formula 1') || lower.includes('formula one') || lower.includes('motorsport')) {
+        if (lower.includes('shorojontro')) {
+          addMessage("Shorojontro is a strategy based game where players try to deceive each other, the last one standing wins. Inspired by Coup. You can find it by navigating to Index -> Projects.", true);
+        } else if (lower.includes('like') || lower.includes('interest') || lower.includes('hobby') || lower.includes('beyond')) {
+          addMessage("Issmam's interests include Motorsport Engineering (F1), Football & Cricket, Music, Gaming, Geography & History, Biology, UI/UX Design, and Photography. You can learn more about these in the 'Beyond Code' section (Index -> Beyond).", true);
+        } else if (lower.includes('project') || lower.includes('work') || lower.includes('built')) {
+          addMessage("Issmam's featured projects are BloodLink, Shorojontro, Ishuchats, MoviesApp, FSM Cache Controller, and Earthquake Management System. You can go there by navigating to Index -> Projects.", true);
+        } else if (lower.includes('f1') || lower.includes('formula 1') || lower.includes('formula one') || lower.includes('motorsport')) {
           addMessage("I love Formula 1! The engineering and aerodynamics are fascinating—especially how drag and grip balance perfectly at those speeds.", true);
         } else if (lower.includes('football') || lower.includes('soccer')) {
           addMessage("I'm a big football fan! Ninety minutes of pure strategy and athleticism.", true);
@@ -902,8 +908,6 @@
           addMessage("You can write me a letter right here on this site! Just navigate to the 'Write a Letter' section at the end of the portfolio.", true);
         } else if (lower.includes('skills') || lower.includes('tech') || lower.includes('stack')) {
           addMessage("I work primarily with Flutter, Dart, JavaFX, and modern web tech. You can check out my 'Stack' section to see everything!", true);
-        } else if (lower.includes('project') || lower.includes('work') || lower.includes('built')) {
-          addMessage("I've built several things like an AI-powered fitness app, real-time chats, and more. Take a look at the 'Selected Works' section!", true);
         } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
           addMessage("Hello there! I'm Ishubot. What would you like to know about Issmam?", true);
         } else {
