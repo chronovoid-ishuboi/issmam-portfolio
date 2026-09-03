@@ -800,7 +800,7 @@
 
     var bar = $('#loadbar'), done = 0;
     var loads = FILES.map(function (f) {
-      return fetch('data/' + f + '.json')
+      return fetch('data/' + f + '.json?v=' + Date.now())
         .then(function (r) { if (!r.ok) throw new Error(f); return r.json(); })
         .then(function (j) {
           done++;
