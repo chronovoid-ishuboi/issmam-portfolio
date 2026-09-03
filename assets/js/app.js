@@ -915,6 +915,11 @@
           { keys: ['design', 'ui/ux', 'uiux', 'interface'], res: "Issmam cares deeply about UI/UX design. Good interfaces are invisible in the same way good infrastructure is. Index -> Beyond." },
           { keys: ['photography', 'lens', 'camera'], res: "Issmam has a long-running photography archive. You can explore his shots by navigating to Index -> Beyond -> Issmam's Photography." },
 
+          { keys: ['achievements', 'awards', 'scholarship', 'distinction', 'medals', 'olympiad'], res: "Issmam has achieved a General Scholarship, Distinction in Science (ICAS), and participated in several Olympiads. You can see his full list of achievements in Index -> Education." },
+          { keys: ['leadership', 'rooms', 'organizer', 'executive', 'editor', 'coordinator'], res: "Issmam has held leadership roles like PR & Marketing Executive for IUTCS and Chief Student Editor for The Josephite. Navigate to Index -> Education for details." },
+          { keys: ['landscape', 'portrait', 'school', 'random', 'recent', 'categories', 'photos'], res: "Issmam's photography is divided into categories: 2019, School, Random, and Recent. You can view them at Index -> Beyond -> Issmam's Photography." },
+          { keys: ['internship', 'intern', 'free', 'available', 'job'], res: "Issmam is currently open to internship opportunities! Feel free to reach out via the 'Write a Letter' section (Index -> Contact)." },
+
           { keys: ['project', 'work', 'built', 'portfolio'], res: "Issmam's featured projects include BloodLink, Shorojontro, Ishuchats, MoviesApp, FSM Cache Controller, and EMS. Go to Index -> Projects." },
           { keys: ['like', 'interest', 'hobby', 'beyond'], res: "Issmam's interests include F1, Football, Cricket, Music, Gaming, Geography, Biology, UI/UX Design, and Photography. Head to Index -> Beyond." },
           { keys: ['contact', 'email', 'hire', 'letter'], res: "You can write a letter right here on this site! Just navigate to the 'Write a Letter' section (Index -> Contact)." },

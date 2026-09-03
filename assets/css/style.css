@@ -1684,7 +1684,7 @@ html[data-theme="light"] .badge.gold {
 .ach p {
   font-size: 0.83rem;
   line-height: 1.55;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 
 .lead-row {
@@ -1716,14 +1716,14 @@ html[data-theme="light"] .badge.gold {
 .lead-row .dt {
   font-size: 0.86rem;
   line-height: 1.6;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 
 .lead-row .pd {
   font-family: var(--mono);
   font-size: 0.62rem;
   letter-spacing: 0.15em;
-  color: var(--ink-3);
+  color: var(--ink-2);
 }
 
 .co-list {
@@ -2775,9 +2775,9 @@ html[data-theme="light"] .portrait::after {
 }
 
 #ishubot-avatar {
-  width: 50px;
   height: 50px;
-  border-radius: 50%;
+  padding: 0 16px;
+  border-radius: 25px;
   background: var(--lime);
   color: #060806;
   border: none;
@@ -2786,7 +2786,16 @@ html[data-theme="light"] .portrait::after {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   transition: transform 0.3s var(--ease-o);
+}
+.ishubot-prompt {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
 }
 #ishubot-avatar:hover {
   transform: scale(1.1);
