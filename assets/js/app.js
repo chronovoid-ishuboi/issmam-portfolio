@@ -110,9 +110,8 @@
         prox = Math.max(0, 1 - Math.hypot(x - this.mx, y - this.my) / this.REACH);
         e = prox * prox;
         c.fillStyle = 'rgba(' + this.hue + ',' + (this.BASE + e * this.PEAK).toFixed(3) + ')';
-        c.beginPath();
-        c.arc(x, y, 0.65 + e * 1.9, 0, 6.283);
-        c.fill();
+        var r = 0.65 + e * 1.9;
+        c.fillRect(x - r, y - r, r * 2, r * 2);
       }
     },
 
@@ -889,28 +888,52 @@
 
       // Simple keyword matching for responses
       setTimeout(function() {
+        var botRules = [
+          { keys: ['iut', 'islamic university', 'university', 'bachelor', 'undergrad'], res: "Issmam is pursuing his BSc in Computer Science & Engineering at Islamic University of Technology (IUT). Navigate to Index -> Education." },
+          { keys: ['ndc', 'notre dame', 'hsc', 'college'], res: "Issmam attended Notre Dame College for his HSC (Science), securing a GPA 5.00 and a General Scholarship. Check Index -> Education." },
+          { keys: ['st joseph', 'josephite', 'school', 'ssc'], res: "Issmam spent 8 years at St. Joseph Higher Secondary School, completing his SSC with a GPA 5.00. Index -> Education has more details." },
+          
+          { keys: ['bloodlink', 'blood', 'emergency'], res: "BloodLink is an emergency blood response platform built with JavaFX and MySQL, featuring a ranked donor matching algorithm. Find it at Index -> Projects." },
+          { keys: ['shorojontro', 'deception', 'coup'], res: "Shorojontro is a strategy based game where players try to deceive each other, the last one standing wins. Inspired by Coup. Built with C and SDL2. Go to Index -> Projects." },
+          { keys: ['ishuchats', 'chat', 'messaging'], res: "Ishuchats is a real-time private messaging application over raw TCP sockets in Java, with push delivery. Index -> Projects." },
+          { keys: ['movie', 'moviesapp', 'watchlist'], res: "MoviesApp is a JavaFX/MySQL desktop application to browse movies, filter by genre, and manage a 'Watch Later' list. Index -> Projects." },
+          { keys: ['fsm', 'cache', 'simulation'], res: "The FSM Cache Controller is a computer architecture simulation written in pure Python, modeling a direct-mapped cache as a finite state machine. Index -> Projects." },
+          { keys: ['earthquake', 'quake', 'disaster'], res: "The Earthquake Management System is a C++ OOP system for coordinating disaster response resources. Index -> Projects." },
+          
+          { keys: ['snake'], res: "Terminal Snake is classic Snake running directly in the Windows terminal using raw escape sequences in C. Index -> Projects." },
+          { keys: ['moments', 'stories'], res: "Moments is a JavaFX stories-feed interface with timed story items cleanly separated from the model. Index -> Projects." },
+          { keys: ['login maker', 'login interface'], res: "Login Maker is a from-scratch HTML/CSS/JS login interface built as an exercise. Index -> Projects." },
+          { keys: ['clock'], res: "Terminal Clock is a live-updating C++ terminal clock that redraws in place every second. Index -> Projects." },
+          { keys: ['tictactoe', 'tic-tac-toe', 'tic tac toe'], res: "Tic-Tac-Toe, One Dimension is a 2-player C game where the board is a single flat array. Index -> Projects." },
+
+          { keys: ['f1', 'formula 1', 'formula one', 'motorsport'], res: "Issmam is fascinated by Formula 1 and motorsport engineering—the aerodynamics and battle between drag and grip. Check out Index -> Beyond." },
+          { keys: ['football', 'soccer', 'cricket', 'sports'], res: "Issmam follows both football and cricket—defending both the 90-minute rush and the 5-day stretch. Index -> Beyond." },
+          { keys: ['music', 'hip-hop', 'classical', 'rap'], res: "Issmam's music playlist has no genre discipline—from conscious rap to classical string sections. Index -> Beyond." },
+          { keys: ['gaming', 'shooters', 'battle royale'], res: "Issmam plays both slow open-world games for the story, and fast tactical shooters for the read. Index -> Beyond." },
+          { keys: ['geography', 'history', 'atlas', 'borders'], res: "Issmam has a geography habit that turned into a history habit—studying how trade routes and old borders shape today's world. Index -> Beyond." },
+          { keys: ['biology', 'fauna', 'animal', 'cat', 'pet'], res: "Issmam finds biology fascinating—seeing organisms as optimization problems. And yes, he really likes cats! Index -> Beyond." },
+          { keys: ['design', 'ui/ux', 'uiux', 'interface'], res: "Issmam cares deeply about UI/UX design. Good interfaces are invisible in the same way good infrastructure is. Index -> Beyond." },
+          { keys: ['photography', 'lens', 'camera'], res: "Issmam has a long-running photography archive. You can explore his shots by navigating to Index -> Beyond -> Issmam's Photography." },
+
+          { keys: ['project', 'work', 'built', 'portfolio'], res: "Issmam's featured projects include BloodLink, Shorojontro, Ishuchats, MoviesApp, FSM Cache Controller, and EMS. Go to Index -> Projects." },
+          { keys: ['like', 'interest', 'hobby', 'beyond'], res: "Issmam's interests include F1, Football, Cricket, Music, Gaming, Geography, Biology, UI/UX Design, and Photography. Head to Index -> Beyond." },
+          { keys: ['contact', 'email', 'hire', 'letter'], res: "You can write a letter right here on this site! Just navigate to the 'Write a Letter' section (Index -> Contact)." },
+          { keys: ['skills', 'tech', 'stack', 'language'], res: "Issmam works primarily with Java, C/C++, Python, Flutter, Dart, JavaFX, and modern web tech. Check out Index -> Stack." },
+          { keys: ['hello', 'hi', 'hey', 'greetings'], res: "Hello there! I'm Ishubot. What would you like to know about Issmam?" }
+        ];
+
         var lower = text.toLowerCase();
-        if (lower.includes('shorojontro')) {
-          addMessage("Shorojontro is a strategy based game where players try to deceive each other, the last one standing wins. Inspired by Coup. You can find it by navigating to Index -> Projects.", true);
-        } else if (lower.includes('like') || lower.includes('interest') || lower.includes('hobby') || lower.includes('beyond')) {
-          addMessage("Issmam's interests include Motorsport Engineering (F1), Football & Cricket, Music, Gaming, Geography & History, Biology, UI/UX Design, and Photography. You can learn more about these in the 'Beyond Code' section (Index -> Beyond).", true);
-        } else if (lower.includes('project') || lower.includes('work') || lower.includes('built')) {
-          addMessage("Issmam's featured projects are BloodLink, Shorojontro, Ishuchats, MoviesApp, FSM Cache Controller, and Earthquake Management System. You can go there by navigating to Index -> Projects.", true);
-        } else if (lower.includes('f1') || lower.includes('formula 1') || lower.includes('formula one') || lower.includes('motorsport')) {
-          addMessage("I love Formula 1! The engineering and aerodynamics are fascinating—especially how drag and grip balance perfectly at those speeds.", true);
-        } else if (lower.includes('football') || lower.includes('soccer')) {
-          addMessage("I'm a big football fan! Ninety minutes of pure strategy and athleticism.", true);
-        } else if (lower.includes('cat') || lower.includes('pet')) {
-          addMessage("I really like cats! They're independent, interesting, and perfect little systems.", true);
-        } else if (lower.includes('cricket')) {
-          addMessage("Cricket is great—I love how it stretches patience across five days and still calls a draw a valid outcome.", true);
-        } else if (lower.includes('contact') || lower.includes('email') || lower.includes('hire') || lower.includes('letter')) {
-          addMessage("You can write me a letter right here on this site! Just navigate to the 'Write a Letter' section at the end of the portfolio.", true);
-        } else if (lower.includes('skills') || lower.includes('tech') || lower.includes('stack')) {
-          addMessage("I work primarily with Flutter, Dart, JavaFX, and modern web tech. You can check out my 'Stack' section to see everything!", true);
-        } else if (lower.includes('hello') || lower.includes('hi') || lower.includes('hey')) {
-          addMessage("Hello there! I'm Ishubot. What would you like to know about Issmam?", true);
-        } else {
+        var responded = false;
+        
+        for (var i = 0; i < botRules.length; i++) {
+          if (botRules[i].keys.some(function(k) { return lower.includes(k); })) {
+            addMessage(botRules[i].res, true);
+            responded = true;
+            break;
+          }
+        }
+        
+        if (!responded) {
           addMessage("That's interesting! I don't have a specific answer for that yet, but you can always write a letter to Issmam in the contact section if you want to know more.", true);
         }
       }, 500);
