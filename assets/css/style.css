@@ -2679,6 +2679,18 @@ html[data-theme="light"] .portrait::after {
   aspect-ratio: 3 / 4;
 }
 
+.hero-sig {
+  width: 100%;
+  max-width: 180px;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.9;
+  filter: invert(1);
+}
+html[data-theme="light"] .hero-sig {
+  filter: invert(0);
+}
+
 @media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
@@ -2686,9 +2698,11 @@ html[data-theme="light"] .portrait::after {
   }
 
   /* Stack, don't hide — the portrait leads on a narrow screen. */
-  .hero-grid .portrait {
+  .hero-grid .hero-right {
     order: -1;
     width: min(46vw, 190px);
+  }
+  .hero-grid .portrait {
     aspect-ratio: 3 / 4;
   }
 }
