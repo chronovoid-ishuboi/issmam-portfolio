@@ -2797,14 +2797,15 @@ html[data-theme="light"] .portrait::after {
 
 #ishubot-tooltip {
   position: absolute;
-  left: calc(100% + 14px);
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--bg-2);
-  color: var(--text);
+  left: 50%;
+  bottom: calc(100% + 14px);
+  top: auto;
+  transform: translateX(-50%);
+  background: var(--lime);
+  color: #060806;
   padding: 6px 12px;
   border-radius: 8px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--lime-deep);
   font-family: var(--mono);
   font-size: 0.65rem;
   font-weight: 600;
@@ -2813,34 +2814,35 @@ html[data-theme="light"] .portrait::after {
   white-space: nowrap;
   pointer-events: none;
   animation: tooltip-pulse 10s infinite var(--ease-o);
+  box-shadow: 0 4px 12px rgba(200, 255, 46, 0.2);
 }
 
 #ishubot-tooltip::before {
   content: "";
   position: absolute;
-  top: 50%;
-  right: 100%;
-  transform: translateY(-50%);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   border-width: 5px;
   border-style: solid;
-  border-color: transparent var(--line) transparent transparent;
+  border-color: var(--lime-deep) transparent transparent transparent;
 }
 #ishubot-tooltip::after {
   content: "";
   position: absolute;
-  top: 50%;
-  right: 100%;
-  margin-right: -1px;
-  transform: translateY(-50%);
+  top: 100%;
+  left: 50%;
+  margin-top: -1px;
+  transform: translateX(-50%);
   border-width: 5px;
   border-style: solid;
-  border-color: transparent var(--bg-2) transparent transparent;
+  border-color: var(--lime) transparent transparent transparent;
 }
 
 @keyframes tooltip-pulse {
-  0%, 10% { opacity: 0; transform: translateY(-50%) translateX(-8px); }
-  20%, 50% { opacity: 1; transform: translateY(-50%) translateX(0); }
-  60%, 100% { opacity: 0; transform: translateY(-50%) translateX(8px); }
+  0%, 10% { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  20%, 50% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  60%, 100% { opacity: 0; transform: translateX(-50%) translateY(-8px); }
 }
 #ishubot-avatar:hover {
   transform: scale(1.1);
