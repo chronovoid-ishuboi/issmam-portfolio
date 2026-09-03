@@ -3053,3 +3053,18 @@ body.no-spotlight #veil-glow {
   opacity: 0 !important;
 }
 
+
+
+/* Disable expensive hover effects on Beyond page */
+#p-beyond .card::after {
+  display: none !important;
+}
+#p-beyond .shot:hover img,
+#p-beyond .int-shot img,
+#p-beyond .int:hover .int-shot img {
+  transform: none !important;
+}
+#p-beyond .shot:hover,
+#p-beyond .card:hover {
+  transform: none !important;
+}
