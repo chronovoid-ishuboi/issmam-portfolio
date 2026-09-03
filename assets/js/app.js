@@ -164,8 +164,6 @@
           '<h2 class="h-lg mt-sm">' + pr.title + '</h2></div>' +
           '<div class="proj-meta">' +
             '<span class="pill' + (pr.status === 'Ongoing' ? ' live' : '') + '">' + pr.status + '</span>' +
-            '<span class="pill">' + pr.year + '</span>' +
-            '<span class="pill">' + pr.course + '</span>' +
           '</div>' +
         '</div>' +
         '<div class="proj-grid">' +
@@ -204,7 +202,7 @@
       return '<button class="work-row pattern-box" data-goto="' + pr.id + '">' +
         '<span class="idx">0' + (i + 1) + '</span>' +
         '<span><span class="ttl">' + pr.title + '</span>' +
-        '<span class="kick">' + pr.kicker + ' · ' + pr.year + '</span></span>' +
+        '<span class="kick">' + pr.kicker + '</span></span>' +
         '<span class="go">' + ARROW + '</span></button>';
     }).join('') +
     '<button class="work-row pattern-box" data-goto="archive">' +

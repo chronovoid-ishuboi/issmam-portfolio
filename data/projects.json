@@ -34,23 +34,22 @@
     {
       "id": "shorojontro",
       "title": "Shorojontro",
-      "kicker": "Shorojontro Platform",
+      "kicker": "Strategy Deception Game",
       "status": "Complete",
       "repo": "https://github.com/chronovoid-ishuboi/Shorojontro",
-      "lead": "A robust platform designed for seamless operations.",
-      "body": "Shorojontro provides a full suite of tools to manage and execute its core functionalities effectively.",
+      "lead": "A strategy-based game where players try to deceive each other, and the last one standing wins. Inspired by Coup.",
+      "body": "This is a single-device, yet multiplayer version of a social deduction game. Built efficiently using C and the SDL2 library for graphics and interactions.",
       "highlights": [
-        "Intuitive user interface",
-        "Robust backend processing",
-        "End-to-end functionality"
+        "Single-device multiplayer mechanics",
+        "Strategic deception and deduction gameplay",
+        "Built with C and SDL2 for high performance"
       ],
       "stack": [
-        "openjdk",
-        "javafx"
+        "c"
       ],
       "stackLabels": [
-        "Java",
-        "JavaFX"
+        "C",
+        "SDL2"
       ],
       "img": "assets/img/projects/shorojontro.jpg"
     },
@@ -89,23 +88,29 @@
     {
       "id": "moviesapp",
       "title": "MoviesApp",
-      "kicker": "Movie Discovery and Tracking",
+      "kicker": "Movie Browser & Watchlist",
       "status": "Complete",
       "repo": "https://github.com/chronovoid-ishuboi/movieapp",
-      "lead": "An application to explore, discover, and keep track of movies.",
-      "body": "MoviesApp offers a streamlined interface to search for movies, view details, and manage a personal watchlist.",
+      "lead": "A desktop application built with JavaFX and MySQL to browse movies, filter by genre, search by title, and save movies to a 'Watch Later' list.",
+      "body": "It provides a streamlined interface with a dynamic grid layout, featuring detailed movie views, dynamic filtering, and a toggleable light/dark UI theme.",
       "highlights": [
-        "Movie search and filtering",
-        "Detailed movie information",
-        "Personal watchlist management"
+        "Dynamic, responsive grid layout for movie cards",
+        "Search and filter by title and genre instantly",
+        "Personal watchlist management for 'Watch Later'",
+        "Detailed view with plot, duration, cast, and rating",
+        "Toggleable light and dark UI themes"
       ],
       "stack": [
         "openjdk",
-        "javafx"
+        "javafx",
+        "mysql",
+        "apachemaven"
       ],
       "stackLabels": [
-        "Java",
-        "JavaFX"
+        "Java 21",
+        "JavaFX 21",
+        "MySQL",
+        "Maven"
       ],
       "img": "assets/img/projects/movieapp.png"
     },
