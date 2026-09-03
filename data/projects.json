@@ -4,8 +4,6 @@
       "id": "bloodlink",
       "title": "BloodLink",
       "kicker": "Emergency Blood Response Platform",
-      "course": "CSE 4402 · Visual Programming Lab",
-      "year": "2026",
       "status": "Ongoing",
       "repo": "https://github.com/chronovoid-ishuboi/BloodLink",
       "lead": "Finding an eligible donor during a medical emergency is a search problem with a clock attached. BloodLink turns it into a ranked, auditable pipeline.",
@@ -31,14 +29,35 @@
         "Maven",
         "MySQL 8"
       ],
-      "img": "assets/img/projects/bloodlink.jpg"
+      "img": "assets/img/projects/bloodlink.png"
+    },
+    {
+      "id": "shorojontro",
+      "title": "Shorojontro",
+      "kicker": "Shorojontro Platform",
+      "status": "Complete",
+      "repo": "https://github.com/chronovoid-ishuboi/Shorojontro",
+      "lead": "A robust platform designed for seamless operations.",
+      "body": "Shorojontro provides a full suite of tools to manage and execute its core functionalities effectively.",
+      "highlights": [
+        "Intuitive user interface",
+        "Robust backend processing",
+        "End-to-end functionality"
+      ],
+      "stack": [
+        "openjdk",
+        "javafx"
+      ],
+      "stackLabels": [
+        "Java",
+        "JavaFX"
+      ],
+      "img": "assets/img/projects/shorojontro.jpg"
     },
     {
       "id": "ishuchats",
       "title": "Ishuchats",
       "kicker": "Real-Time Messaging over Raw TCP",
-      "course": "CSE 4402 · Socket Programming",
-      "year": "2026",
       "status": "Complete",
       "repo": "https://github.com/chronovoid-ishuboi/Ishuchats",
       "lead": "The easy version of a chat app polls a database. This one doesn't. Messages are pushed the moment they exist.",
@@ -65,14 +84,35 @@
         "Gson",
         "jBCrypt"
       ],
-      "img": "assets/img/projects/ishuchats.jpg"
+      "img": "assets/img/projects/ishuchats.png"
+    },
+    {
+      "id": "moviesapp",
+      "title": "MoviesApp",
+      "kicker": "Movie Discovery and Tracking",
+      "status": "Complete",
+      "repo": "https://github.com/chronovoid-ishuboi/movieapp",
+      "lead": "An application to explore, discover, and keep track of movies.",
+      "body": "MoviesApp offers a streamlined interface to search for movies, view details, and manage a personal watchlist.",
+      "highlights": [
+        "Movie search and filtering",
+        "Detailed movie information",
+        "Personal watchlist management"
+      ],
+      "stack": [
+        "openjdk",
+        "javafx"
+      ],
+      "stackLabels": [
+        "Java",
+        "JavaFX"
+      ],
+      "img": "assets/img/projects/movieapp.png"
     },
     {
       "id": "fsm",
       "title": "FSM Cache Controller",
       "kicker": "Computer Architecture Simulation",
-      "course": "CSE 4305 · Computer Organisation &amp; Architecture",
-      "year": "2026",
       "status": "Complete",
       "repo": "https://github.com/chronovoid-ishuboi/CSE_4305_FSM_Project",
       "lead": "A cache controller is a state machine before it is ever silicon. This one is written as exactly that — and then made to run.",
@@ -91,14 +131,12 @@
       "stackLabels": [
         "Python 3"
       ],
-      "img": "assets/img/projects/fsm.jpg"
+      "img": "assets/img/projects/fsm.png"
     },
     {
       "id": "quake",
       "title": "Earthquake Management System",
       "kicker": "Object-Oriented Disaster Response",
-      "course": "CSE 4302 · Object Oriented Programming",
-      "year": "2025",
       "status": "Complete",
       "repo": "https://github.com/chronovoid-ishuboi/230041213_CSE4302",
       "lead": "A country that sits on a fault line should be able to model what happens after the shaking stops.",
