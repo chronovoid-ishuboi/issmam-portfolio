@@ -1195,8 +1195,7 @@ html[data-theme="light"] .btn.solid {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.82) contrast(1.04);
-  transition: transform 900ms var(--ease-o), filter 520ms var(--ease-o);
+  transition: transform 900ms var(--ease-o);
 }
 
 .proj-shot::after {
@@ -1217,7 +1216,6 @@ html[data-theme="light"] .proj-shot::after {
 
 .proj-shot:hover img {
   transform: scale(1.03);
-  filter: saturate(1) contrast(1.07);
 }
 
 .proj-shot.empty {
@@ -1787,8 +1785,7 @@ html[data-theme="light"] .badge.gold {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.7) contrast(1.05);
-  transition: transform 900ms var(--ease-o), filter 600ms var(--ease-o);
+  transition: transform 900ms var(--ease-o);
 }
 
 .int-shot::after {
@@ -1801,7 +1798,6 @@ html[data-theme="light"] .badge.gold {
 
 .int:hover .int-shot img {
   transform: scale(1.05);
-  filter: saturate(1) contrast(1.08);
 }
 
 .int-shot.empty {
@@ -2566,8 +2562,7 @@ html[data-theme="light"] .badge.gold {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.72) contrast(1.06);
-  transition: transform 1100ms var(--ease-o), filter 700ms var(--ease-o);
+  transition: transform 1100ms var(--ease-o);
 }
 
 .portrait::after {
@@ -2591,7 +2586,6 @@ html[data-theme="light"] .portrait::after {
 
 .portrait:hover img {
   transform: scale(1.05);
-  filter: saturate(1) contrast(1.1);
 }
 
 .portrait figcaption {
