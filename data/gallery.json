@@ -2,22 +2,50 @@
   "note": "Add a new photograph by dropping the file into assets/img/gallery/ and appending one object below. Nothing else needs to change.",
   "collections": [
     {
-      "id": "archive-2019",
-      "title": "Archive",
-      "year": "2019",
-      "blurb": "Early work, kept as it was shot. The gear was modest and the technique was still forming — these are here because they are where it started, not because they are the best of it. Newer work is coming.",
+      "id": "2019",
+      "title": "2019",
+      "year": "",
+      "blurb": "These are from 2019",
+      "slots": 0,
       "photos": [
-        { "src": "assets/img/gallery/tiger.jpg",     "title": "Held",        "caption": "Behind the wire, looking past it.", "orientation": "landscape" },
-        { "src": "assets/img/gallery/jellyfish.jpg", "title": "Drift",       "caption": "Moon jelly, backlit against the dark.", "orientation": "landscape" },
-        { "src": "assets/img/gallery/medusa.jpg",    "title": "Filament",    "caption": "Almost nothing but tendrils and colour.", "orientation": "landscape" }
+        { "src": "assets/img/gallery/tiger.jpg", "title": "", "caption": "", "orientation": "landscape" },
+        { "src": "assets/img/gallery/jellyfish.jpg", "title": "", "caption": "", "orientation": "landscape" },
+        { "src": "assets/img/gallery/medusa.jpg", "title": "", "caption": "", "orientation": "landscape" }
+      ]
+    },
+    {
+      "id": "school",
+      "title": "School",
+      "year": "",
+      "blurb": "",
+      "slots": 0,
+      "photos": [
+        { "src": "assets/img/gallery/school1_landscape.JPG", "title": "", "caption": "", "orientation": "landscape" },
+        { "src": "assets/img/gallery/school2_portrait.JPG", "title": "", "caption": "", "orientation": "portrait" },
+        { "src": "assets/img/gallery/school3_landscape.JPG", "title": "", "caption": "", "orientation": "landscape" }
+      ]
+    },
+    {
+      "id": "random",
+      "title": "Random",
+      "year": "",
+      "blurb": "",
+      "slots": 1,
+      "photos": [
+        { "src": "assets/img/gallery/random1_portrait.JPEG", "title": "", "caption": "", "orientation": "portrait" },
+        { "src": "assets/img/gallery/random2_landscape.jpeg", "title": "", "caption": "", "orientation": "landscape" }
       ]
     },
     {
       "id": "recent",
       "title": "Recent",
       "year": "",
-      "blurb": "Reserved. New frames land here.",
-      "photos": []
+      "blurb": "",
+      "slots": 1,
+      "photos": [
+        { "src": "assets/img/gallery/recent1_landscape.jpeg", "title": "", "caption": "", "orientation": "landscape" },
+        { "src": "assets/img/gallery/recent2_portrait.jpeg", "title": "", "caption": "", "orientation": "portrait" }
+      ]
     }
   ]
 }

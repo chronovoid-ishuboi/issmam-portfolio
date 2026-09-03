@@ -284,27 +284,39 @@
 
   function renderLens(g) {
     LIGHTBOX = [];
-    var html = '<div class="lens-note">' + INFO +
-      '<span><b>These are from 2019.</b> Early frames, kept as they were shot — the gear was modest and the technique was still forming. They are here because they are where it started, not because they are the best of it. Newer work lands in the next collection.</span></div>';
+    var html = '';
 
     g.collections.forEach(function (col) {
       html += '<div class="mt-lg">' +
-        '<p class="eyebrow mb-sm">' + col.title + (col.year ? ' — ' + col.year : '') + '</p>' +
-        '<p class="body-text mb-md" style="font-size:.87rem">' + col.blurb + '</p><div class="shots">';
+        '<p class="eyebrow mb-sm">' + col.title + (col.year ? ' — ' + col.year : '') + '</p>';
+      
+      if (col.blurb) {
+        html += '<p class="body-text mb-md" style="font-size:.87rem">' + col.blurb + '</p>';
+      }
+      
+      html += '<div class="shots">';
 
       col.photos.forEach(function (ph) {
         var i = LIGHTBOX.length;
         LIGHTBOX.push(ph);
+        
+        var capHtml = '';
+        if (ph.title || ph.caption) {
+           capHtml = '<span class="cap">' + 
+                     (ph.title ? '<b>' + ph.title + '</b>' : '') + 
+                     (ph.caption ? '<span>' + ph.caption + '</span>' : '') + 
+                     '</span>';
+        }
+
         html += '<button class="shot' + (ph.orientation === 'portrait' ? ' tall' : '') + '" data-shot="' + i + '">' +
-          '<img src="' + ph.src + '" alt="' + esc(ph.title) + '" loading="lazy" ' +
+          '<img src="' + ph.src + '" alt="' + esc(ph.title || '') + '" loading="lazy" ' +
           'onerror="this.closest(\'.shot\').classList.add(\'empty\');' +
           'this.closest(\'.shot\').innerHTML=\'<div class=&quot;ph&quot;>' + CAM.replace(/"/g, '&quot;') +
           '<p>Awaiting upload</p><code>' + ph.src + '</code></div>\';">' +
-          '<span class="wm">Issmam’s Photography</span>' +
-          '<span class="cap"><b>' + ph.title + '</b><span>' + ph.caption + '</span></span></button>';
+          '<span class="wm">Issmam’s Photography</span>' + capHtml + '</button>';
       });
 
-      var slots = col.photos.length ? 1 : 4;
+      var slots = col.slots !== undefined ? col.slots : 0;
       for (var k = 0; k < slots; k++) {
         html += '<div class="shot slot"><div class="ph">' + CAM +
           '<p>Room for more</p></div></div>';
