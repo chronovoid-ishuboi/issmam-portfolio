@@ -309,7 +309,7 @@
         }
 
         html += '<button class="shot' + (ph.orientation === 'portrait' ? ' tall' : '') + '" data-shot="' + i + '">' +
-          '<img src="' + ph.src + '" alt="' + esc(ph.title || '') + '" loading="lazy" ' +
+          '<img src="' + ph.src + '" alt="' + esc(ph.title || '') + '" loading="lazy" decoding="async" ' +
           'onerror="this.closest(\'.shot\').classList.add(\'empty\');' +
           'this.closest(\'.shot\').innerHTML=\'<div class=&quot;ph&quot;>' + CAM.replace(/"/g, '&quot;') +
           '<p>Awaiting upload</p><code>' + ph.src + '</code></div>\';">' +

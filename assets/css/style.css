@@ -1934,8 +1934,7 @@ html[data-theme="light"] .badge.gold {
   height: auto;
   display: block;
   object-fit: cover;
-  transition: transform 900ms var(--ease-o), filter 520ms;
-  filter: saturate(0.86) contrast(1.05);
+  transition: transform 900ms var(--ease-o);
 }
 
 
@@ -1947,7 +1946,6 @@ html[data-theme="light"] .badge.gold {
 
 .shot:hover img {
   transform: scale(1.06);
-  filter: saturate(1.05) contrast(1.08);
 }
 
 .shot .cap {
